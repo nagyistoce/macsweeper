@@ -1,0 +1,277 @@
+// !$*UTF8*$!
+{
+	089C165DFE840E0CC02AAC07 /* English */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {759, 685}}";
+			sepNavSelRange = "{93, 0}";
+			sepNavVisRange = "{0, 95}";
+			sepNavVisRect = "{{0, 0}, {759, 669}}";
+			sepNavWindowFrame = "{{15, -1}, {774, 742}}";
+		};
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeArchitecture = i386;
+		activeBuildConfigurationName = Release;
+		activeExecutable = 8ECB835E0BF2688C00A0E08C /* MacSweeper */;
+		activeTarget = 8D1107260486CEB800E47090 /* MacSweeper */;
+		addToTargets = (
+			8D1107260486CEB800E47090 /* MacSweeper */,
+		);
+		codeSenseManager = 8ECB83640BF268AB00A0E08C /* Code sense */;
+		executables = (
+			8ECB835E0BF2688C00A0E08C /* MacSweeper */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					341,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 240038928;
+			PBXWorkspaceStateSaveDate = 240038928;
+		};
+		perUserProjectItems = {
+			8E4CDD1C0E4EB781000D6033 /* PBXTextBookmark */ = 8E4CDD1C0E4EB781000D6033 /* PBXTextBookmark */;
+			8E4CDD1D0E4EB781000D6033 /* PBXTextBookmark */ = 8E4CDD1D0E4EB781000D6033 /* PBXTextBookmark */;
+		};
+		sourceControlManager = 8ECB83630BF268AB00A0E08C /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	29B97316FDCFA39411CA2CEA /* main.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {937, 218}}";
+			sepNavSelRange = "{0, 3}";
+			sepNavVisRange = "{0, 257}";
+			sepNavVisRect = "{{0, 0}, {546, 669}}";
+			sepNavWindowFrame = "{{15, -1}, {561, 742}}";
+		};
+	};
+	8D1107260486CEB800E47090 /* MacSweeper */ = {
+		activeExec = 0;
+		executables = (
+			8ECB835E0BF2688C00A0E08C /* MacSweeper */,
+		);
+	};
+	8D1107310486CEB800E47090 /* Info.plist */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {759, 669}}";
+			sepNavSelRange = "{988, 0}";
+			sepNavVisRect = "{{0, 0}, {759, 669}}";
+			sepNavWindowFrame = "{{15, -1}, {774, 742}}";
+		};
+	};
+	8E4839370C397DDB00BB6395 /* minesweeper.icns */ = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{15, -1}, {660, 742}}";
+		};
+	};
+	8E4CDD1C0E4EB781000D6033 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8ECB83740BF2693800A0E08C /* MineController.m */;
+		name = "MineController.m: 9";
+		rLen = 0;
+		rLoc = 159;
+		rType = 0;
+		vrLen = 451;
+		vrLoc = 0;
+	};
+	8E4CDD1D0E4EB781000D6033 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8ECB83740BF2693800A0E08C /* MineController.m */;
+		name = "MineController.m: 9";
+		rLen = 0;
+		rLoc = 159;
+		rType = 0;
+		vrLen = 451;
+		vrLoc = 0;
+	};
+	8E8955950C370D4A009EAA11 /* Control.html */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {2408, 952}}";
+			sepNavSelRange = "{834, 0}";
+			sepNavVisRect = "{{0, 236}, {489, 669}}";
+			sepNavWindowFrame = "{{2, 4}, {504, 742}}";
+		};
+	};
+	8E89559A0C370D4A009EAA11 /* MacSweeperHelp.html */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {866, 669}}";
+			sepNavSelRange = "{128, 0}";
+			sepNavVisRect = "{{225, 0}, {486, 669}}";
+			sepNavWindowFrame = "{{15, 4}, {501, 742}}";
+		};
+	};
+	8E89559B0C370D4A009EAA11 /* Play.html */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1514, 669}}";
+			sepNavSelRange = "{807, 0}";
+			sepNavVisRect = "{{0, 0}, {575, 669}}";
+			sepNavWindowFrame = "{{362, 4}, {590, 742}}";
+		};
+	};
+	8E89559C0C370D4A009EAA11 /* Report.html */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1346, 669}}";
+			sepNavSelRange = "{817, 0}";
+			sepNavVisRect = "{{0, 0}, {575, 669}}";
+			sepNavWindowFrame = "{{15, -1}, {590, 742}}";
+		};
+	};
+	8E89559E0C370D4A009EAA11 /* MainStyle.css */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {794, 666}}";
+			sepNavSelRange = "{328, 0}";
+			sepNavVisRect = "{{0, 0}, {557, 666}}";
+			sepNavWindowFrame = "{{35, -29}, {572, 739}}";
+		};
+	};
+	8E89568A0C372C5E009EAA11 /* TaskStyle.css */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1220, 770}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRect = "{{0, 0}, {557, 666}}";
+			sepNavWindowFrame = "{{2, 7}, {572, 739}}";
+		};
+	};
+	8ECB835E0BF2688C00A0E08C /* MacSweeper */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = MacSweeper;
+		savedGlobals = {
+		};
+		sourceDirectories = (
+		);
+		variableFormatDictionary = {
+		};
+	};
+	8ECB83630BF268AB00A0E08C /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+		scmType = "";
+	};
+	8ECB83640BF268AB00A0E08C /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	8ECB83730BF2693800A0E08C /* MineController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {806, 1610}}";
+			sepNavSelRange = "{1862, 7}";
+			sepNavVisRect = "{{0, 446}, {498, 669}}";
+			sepNavWindowFrame = "{{506, 4}, {513, 742}}";
+		};
+	};
+	8ECB83740BF2693800A0E08C /* MineController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {563, 4172}}";
+			sepNavSelRange = "{159, 0}";
+			sepNavVisRange = "{0, 451}";
+			sepNavVisRect = "{{0, 4571}, {645, 669}}";
+			sepNavWindowFrame = "{{127, 7}, {982, 771}}";
+		};
+	};
+	8ECB83760BF2695000A0E08C /* MineView.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {937, 1050}}";
+			sepNavSelRange = "{871, 0}";
+			sepNavVisRange = "{657, 363}";
+			sepNavVisRect = "{{0, 0}, {498, 669}}";
+			sepNavWindowFrame = "{{113, 4}, {513, 742}}";
+		};
+	};
+	8ECB83770BF2695000A0E08C /* MineView.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {937, 4508}}";
+			sepNavSelRange = "{8051, 0}";
+			sepNavVisRange = "{0, 300}";
+			sepNavVisRect = "{{0, 3215}, {535, 669}}";
+			sepNavWindowFrame = "{{475, 4}, {550, 742}}";
+		};
+	};
+	8ECB83790BF2696400A0E08C /* MineField.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {754, 798}}";
+			sepNavSelRange = "{1088, 0}";
+			sepNavVisRect = "{{0, 129}, {754, 669}}";
+			sepNavWindowFrame = "{{15, -1}, {769, 742}}";
+		};
+	};
+	8ECB837A0BF2696400A0E08C /* MineField.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {754, 3374}}";
+			sepNavSelRange = "{5303, 0}";
+			sepNavVisRect = "{{0, 2705}, {754, 669}}";
+			sepNavWindowFrame = "{{222, 4}, {769, 742}}";
+		};
+	};
+	8ECB837C0BF2697400A0E08C /* Cell.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {754, 669}}";
+			sepNavSelRange = "{321, 0}";
+			sepNavVisRect = "{{0, 0}, {754, 669}}";
+			sepNavWindowFrame = "{{15, -1}, {769, 742}}";
+		};
+	};
+	8ECB837D0BF2697400A0E08C /* Cell.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {754, 1624}}";
+			sepNavSelRange = "{203, 0}";
+			sepNavVisRect = "{{0, 955}, {754, 669}}";
+			sepNavWindowFrame = "{{15, -1}, {769, 742}}";
+		};
+	};
+	8ECB84520BF2C83700A0E08C /* MineView+Drawing.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {737, 669}}";
+			sepNavSelRange = "{1012, 0}";
+			sepNavVisRect = "{{0, 0}, {737, 669}}";
+			sepNavWindowFrame = "{{15, 4}, {752, 742}}";
+		};
+	};
+	8ECB84530BF2C83700A0E08C /* MineView+Drawing.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {674, 3136}}";
+			sepNavSelRange = "{1811, 0}";
+			sepNavVisRect = "{{0, 758}, {517, 669}}";
+			sepNavWindowFrame = "{{491, 4}, {532, 742}}";
+		};
+	};
+}

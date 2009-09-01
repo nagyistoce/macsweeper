@@ -1,0 +1,458 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
+		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
+		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		8E4839380C397DDB00BB6395 /* minesweeper.icns in Resources */ = {isa = PBXBuildFile; fileRef = 8E4839370C397DDB00BB6395 /* minesweeper.icns */; };
+		8E8955A30C370D4B009EAA11 /* MacSweeperHelp.html in Copy Apple Help Resources */ = {isa = PBXBuildFile; fileRef = 8E89559A0C370D4A009EAA11 /* MacSweeperHelp.html */; };
+		8E8955A40C370D4B009EAA11 /* Play.html in Copy Apple Help Resources */ = {isa = PBXBuildFile; fileRef = 8E89559B0C370D4A009EAA11 /* Play.html */; };
+		8E8955A50C370D4B009EAA11 /* Report.html in Copy Apple Help Resources */ = {isa = PBXBuildFile; fileRef = 8E89559C0C370D4A009EAA11 /* Report.html */; };
+		8E8955A60C370D4B009EAA11 /* MainStyle.css in Copy Apple Help Styles */ = {isa = PBXBuildFile; fileRef = 8E89559E0C370D4A009EAA11 /* MainStyle.css */; };
+		8E89560F0C37262C009EAA11 /* Control.html in Copy Apple Help Resources */ = {isa = PBXBuildFile; fileRef = 8E8955950C370D4A009EAA11 /* Control.html */; };
+		8E89568B0C372C5E009EAA11 /* TaskStyle.css in Copy Apple Help Styles */ = {isa = PBXBuildFile; fileRef = 8E89568A0C372C5E009EAA11 /* TaskStyle.css */; };
+		8ECB83750BF2693800A0E08C /* MineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB83740BF2693800A0E08C /* MineController.m */; };
+		8ECB83780BF2695000A0E08C /* MineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB83770BF2695000A0E08C /* MineView.m */; };
+		8ECB837B0BF2696500A0E08C /* MineField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB837A0BF2696400A0E08C /* MineField.m */; };
+		8ECB837E0BF2697400A0E08C /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB837D0BF2697400A0E08C /* Cell.m */; };
+		8ECB84540BF2C83700A0E08C /* MineView+Drawing.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB84530BF2C83700A0E08C /* MineView+Drawing.m */; };
+		8EF5918A0C78E1AD008C04C0 /* macsweeper_main.png in Copy Apple Help Images */ = {isa = PBXBuildFile; fileRef = 8EF591890C78E1AD008C04C0 /* macsweeper_main.png */; };
+		8EF591900C78E33D008C04C0 /* icon16.png in Copy Apple Help Images */ = {isa = PBXBuildFile; fileRef = 8EF5918E0C78E33D008C04C0 /* icon16.png */; };
+		8EF591910C78E33D008C04C0 /* icon32.png in Copy Apple Help Images */ = {isa = PBXBuildFile; fileRef = 8EF5918F0C78E33D008C04C0 /* icon32.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8E8955EC0C372399009EAA11 /* Copy Apple Help Resources */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "English.lproj/MacSweeper Help";
+			dstSubfolderSpec = 7;
+			files = (
+				8E89560F0C37262C009EAA11 /* Control.html in Copy Apple Help Resources */,
+				8E8955A30C370D4B009EAA11 /* MacSweeperHelp.html in Copy Apple Help Resources */,
+				8E8955A40C370D4B009EAA11 /* Play.html in Copy Apple Help Resources */,
+				8E8955A50C370D4B009EAA11 /* Report.html in Copy Apple Help Resources */,
+			);
+			name = "Copy Apple Help Resources";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E8955F20C37243B009EAA11 /* Copy Apple Help Images */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "English.lproj/MacSweeper Help/images";
+			dstSubfolderSpec = 7;
+			files = (
+				8EF5918A0C78E1AD008C04C0 /* macsweeper_main.png in Copy Apple Help Images */,
+				8EF591910C78E33D008C04C0 /* icon32.png in Copy Apple Help Images */,
+				8EF591900C78E33D008C04C0 /* icon16.png in Copy Apple Help Images */,
+			);
+			name = "Copy Apple Help Images";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E8955F40C372486009EAA11 /* Copy Apple Help Styles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "English.lproj/MacSweeper Help/style";
+			dstSubfolderSpec = 7;
+			files = (
+				8E89568B0C372C5E009EAA11 /* TaskStyle.css in Copy Apple Help Styles */,
+				8E8955A60C370D4B009EAA11 /* MainStyle.css in Copy Apple Help Styles */,
+			);
+			name = "Copy Apple Help Styles";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		29B97319FDCFA39411CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		32CA4F630368D1EE00C91783 /* MacSweeper_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacSweeper_Prefix.pch; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* MacSweeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacSweeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E4839370C397DDB00BB6395 /* minesweeper.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = minesweeper.icns; sourceTree = "<group>"; };
+		8E8955950C370D4A009EAA11 /* Control.html */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.html; path = Control.html; sourceTree = "<group>"; };
+		8E89559A0C370D4A009EAA11 /* MacSweeperHelp.html */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.html; path = MacSweeperHelp.html; sourceTree = "<group>"; };
+		8E89559B0C370D4A009EAA11 /* Play.html */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.html; path = Play.html; sourceTree = "<group>"; };
+		8E89559C0C370D4A009EAA11 /* Report.html */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.html; path = Report.html; sourceTree = "<group>"; };
+		8E89559E0C370D4A009EAA11 /* MainStyle.css */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = MainStyle.css; sourceTree = "<group>"; };
+		8E89568A0C372C5E009EAA11 /* TaskStyle.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TaskStyle.css; sourceTree = "<group>"; };
+		8ECB83730BF2693800A0E08C /* MineController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MineController.h; sourceTree = "<group>"; };
+		8ECB83740BF2693800A0E08C /* MineController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = MineController.m; sourceTree = "<group>"; };
+		8ECB83760BF2695000A0E08C /* MineView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MineView.h; sourceTree = "<group>"; };
+		8ECB83770BF2695000A0E08C /* MineView.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = MineView.m; sourceTree = "<group>"; };
+		8ECB83790BF2696400A0E08C /* MineField.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MineField.h; sourceTree = "<group>"; };
+		8ECB837A0BF2696400A0E08C /* MineField.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = MineField.m; sourceTree = "<group>"; };
+		8ECB837C0BF2697400A0E08C /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
+		8ECB837D0BF2697400A0E08C /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		8ECB84520BF2C83700A0E08C /* MineView+Drawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MineView+Drawing.h"; sourceTree = "<group>"; };
+		8ECB84530BF2C83700A0E08C /* MineView+Drawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MineView+Drawing.m"; sourceTree = "<group>"; };
+		8EF591890C78E1AD008C04C0 /* macsweeper_main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = macsweeper_main.png; sourceTree = "<group>"; };
+		8EF5918E0C78E33D008C04C0 /* icon16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon16.png; sourceTree = "<group>"; };
+		8EF5918F0C78E33D008C04C0 /* icon32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon32.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8ECB836F0BF268D000A0E08C /* MineController */,
+				8ECB83700BF268DB00A0E08C /* MineView */,
+				8ECB83710BF268ED00A0E08C /* MineField */,
+				8ECB83720BF268F600A0E08C /* Cell */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107320486CEB800E47090 /* MacSweeper.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* MacSweeper */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = MacSweeper;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* MacSweeper_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8E4839370C397DDB00BB6395 /* minesweeper.icns */,
+				8E8955940C370D4A009EAA11 /* MacSweeper Help */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
+				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8E8955940C370D4A009EAA11 /* MacSweeper Help */ = {
+			isa = PBXGroup;
+			children = (
+				8E8955960C370D4A009EAA11 /* images */,
+				8E89559A0C370D4A009EAA11 /* MacSweeperHelp.html */,
+				8E8955950C370D4A009EAA11 /* Control.html */,
+				8E89559B0C370D4A009EAA11 /* Play.html */,
+				8E89559C0C370D4A009EAA11 /* Report.html */,
+				8E89559D0C370D4A009EAA11 /* style */,
+			);
+			path = "MacSweeper Help";
+			sourceTree = "<group>";
+		};
+		8E8955960C370D4A009EAA11 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				8EF591890C78E1AD008C04C0 /* macsweeper_main.png */,
+				8EF5918F0C78E33D008C04C0 /* icon32.png */,
+				8EF5918E0C78E33D008C04C0 /* icon16.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		8E89559D0C370D4A009EAA11 /* style */ = {
+			isa = PBXGroup;
+			children = (
+				8E89559E0C370D4A009EAA11 /* MainStyle.css */,
+				8E89568A0C372C5E009EAA11 /* TaskStyle.css */,
+			);
+			path = style;
+			sourceTree = "<group>";
+		};
+		8ECB836F0BF268D000A0E08C /* MineController */ = {
+			isa = PBXGroup;
+			children = (
+				8ECB83730BF2693800A0E08C /* MineController.h */,
+				8ECB83740BF2693800A0E08C /* MineController.m */,
+			);
+			name = MineController;
+			sourceTree = "<group>";
+		};
+		8ECB83700BF268DB00A0E08C /* MineView */ = {
+			isa = PBXGroup;
+			children = (
+				8ECB83760BF2695000A0E08C /* MineView.h */,
+				8ECB83770BF2695000A0E08C /* MineView.m */,
+				8ECB84520BF2C83700A0E08C /* MineView+Drawing.h */,
+				8ECB84530BF2C83700A0E08C /* MineView+Drawing.m */,
+			);
+			name = MineView;
+			sourceTree = "<group>";
+		};
+		8ECB83710BF268ED00A0E08C /* MineField */ = {
+			isa = PBXGroup;
+			children = (
+				8ECB83790BF2696400A0E08C /* MineField.h */,
+				8ECB837A0BF2696400A0E08C /* MineField.m */,
+			);
+			name = MineField;
+			sourceTree = "<group>";
+		};
+		8ECB83720BF268F600A0E08C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8ECB837C0BF2697400A0E08C /* Cell.h */,
+				8ECB837D0BF2697400A0E08C /* Cell.m */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D1107260486CEB800E47090 /* MacSweeper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "MacSweeper" */;
+			buildPhases = (
+				8D1107290486CEB800E47090 /* Resources */,
+				8E8955EC0C372399009EAA11 /* Copy Apple Help Resources */,
+				8E8955F20C37243B009EAA11 /* Copy Apple Help Images */,
+				8E8955F40C372486009EAA11 /* Copy Apple Help Styles */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MacSweeper;
+			productInstallPath = "$(HOME)/Applications";
+			productName = MacSweeper;
+			productReference = 8D1107320486CEB800E47090 /* MacSweeper.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "MacSweeper" */;
+			compatibilityVersion = "Xcode 2.4";
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* MacSweeper */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D1107260486CEB800E47090 /* MacSweeper */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */,
+				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
+				8E4839380C397DDB00BB6395 /* minesweeper.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072D0486CEB800E47090 /* main.m in Sources */,
+				8ECB83750BF2693800A0E08C /* MineController.m in Sources */,
+				8ECB83780BF2695000A0E08C /* MineView.m in Sources */,
+				8ECB837B0BF2696500A0E08C /* MineField.m in Sources */,
+				8ECB837E0BF2697400A0E08C /* Cell.m in Sources */,
+				8ECB84540BF2C83700A0E08C /* MineView+Drawing.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C165DFE840E0CC02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		29B97318FDCFA39411CA2CEA /* MainMenu.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29B97319FDCFA39411CA2CEA /* English */,
+			);
+			name = MainMenu.nib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C01FCF4B08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = MacSweeper;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		C01FCF4C08A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = MacSweeper;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
+				GCC_AUTO_VECTORIZATION = YES;
+				GCC_VERSION = 4.0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
+				GCC_AUTO_VECTORIZATION = YES;
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_UNROLL_LOOPS = YES;
+				GCC_VERSION = 4.0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = YES;
+				GCC_WARN_PEDANTIC = NO;
+				GCC_WARN_PROTOTYPE_CONVERSION = NO;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "MacSweeper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4B08A954540054247B /* Debug */,
+				C01FCF4C08A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "MacSweeper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

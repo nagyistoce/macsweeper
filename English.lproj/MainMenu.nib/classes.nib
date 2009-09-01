@@ -1,0 +1,42 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                beginnerGame = id; 
+                cancelCustomGame = id; 
+                cancelNewHighScore = id; 
+                customGame = id; 
+                expertGame = id; 
+                intermediateGame = id; 
+                newCustomGame = id; 
+                newGame = id; 
+                saveNewHighScore = id; 
+                showHighScores = id; 
+                toggleQuestions = id; 
+            }; 
+            CLASS = MineController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                beginnerForm = NSForm; 
+                beginnerMenuItem = NSMenuItem; 
+                customForm = NSForm; 
+                customGameSheet = NSPanel; 
+                customMenuItem = NSMenuItem; 
+                expertForm = NSForm; 
+                expertMenuItem = NSMenuItem; 
+                highScoresPanel = NSPanel; 
+                intermediateForm = NSForm; 
+                intermediateMenuItem = NSMenuItem; 
+                mainWindow = NSWindow; 
+                mineView = MineView; 
+                newHighScoreForm = NSForm; 
+                newHighScoreSheet = NSPanel; 
+                toggleQuestionsMenuItem = NSMenuItem; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }, 
+        {CLASS = MineView; LANGUAGE = ObjC; SUPERCLASS = NSView; }
+    ); 
+    IBVersion = 1; 
+}
