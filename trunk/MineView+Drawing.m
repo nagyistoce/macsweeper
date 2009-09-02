@@ -98,7 +98,7 @@
 }
 
 - (void)drawCellClearedBackgroundInRect: (NSRect) rect {
-    int n = cellHeight / 16.0;
+    NSInteger n = (NSInteger)(cellHeight / 16.0f);
     
 	NSBezierPath * topLeft = [NSBezierPath bezierPath];
 	[topLeft moveToPoint: NSMakePoint(rect.origin.x,rect.origin.y)];
@@ -114,7 +114,7 @@
 }
 
 - (void)drawCellHiddenBackgroundInRect: (NSRect) rect {
-	int n = cellHeight / 8.0;
+	NSInteger n = (NSInteger)(cellHeight / 8.0f);
 	
 	NSBezierPath * topLeft = [NSBezierPath bezierPath];
 	/* Build the top Left corner */ 
@@ -164,9 +164,9 @@
 	
 	NSBezierPath * flag = [NSBezierPath bezierPath];
 	/* Build the flag */
-	[flag moveToPoint: NSMakePoint(rect.origin.x+(rect.size.width/2),top-1)];
-	[flag lineToPoint: NSMakePoint(rect.origin.x+(rect.size.width/2)-flagWidth,top-1-(flagHeight/2))];
-	[flag lineToPoint: NSMakePoint(rect.origin.x+(rect.size.width/2),top-1-flagHeight)];
+	[flag moveToPoint: NSMakePoint(rect.origin.x+(rect.size.width/2), top-1)];
+	[flag lineToPoint: NSMakePoint(rect.origin.x+(rect.size.width/2)-flagWidth, top-1-(flagHeight/2))];
+	[flag lineToPoint: NSMakePoint(rect.origin.x+(rect.size.width/2), top-1-flagHeight)];
 	[flag closePath];
 	
 	/* Draw the flag */
@@ -178,10 +178,10 @@
 }
 
 - (void)drawMineInRect: (NSRect) rect {
-	NSRect inset = NSInsetRect(rect,cellWidth/4,cellHeight/4);
+	NSRect inset = NSInsetRect(rect, cellWidth/4, cellHeight/4);
 	NSBezierPath * mine = [NSBezierPath bezierPathWithOvalInRect: inset];
-	NSBezierPath * hLine = [NSBezierPath bezierPathWithRect: NSInsetRect(rect,2,7.5)];
-	NSBezierPath * vLine = [NSBezierPath bezierPathWithRect: NSInsetRect(rect,7.5,2)];
+	NSBezierPath * hLine = [NSBezierPath bezierPathWithRect: NSInsetRect(rect, 2, 7.5f)];
+	NSBezierPath * vLine = [NSBezierPath bezierPathWithRect: NSInsetRect(rect, 7.5f, 2)];
     
 	inset.size.height = cellHeight/8;
 	inset.size.width = cellWidth/8;
@@ -199,20 +199,20 @@
 }
 
 - (void)drawXInRect: (NSRect) rect {
-    NSRect r = NSInsetRect(rect,cellWidth/8.0,cellHeight/8.0);
+    NSRect r = NSInsetRect(rect,cellWidth/8.0f,cellHeight/8.0f);
     
     NSBezierPath * down = [NSBezierPath bezierPath];
-    [down moveToPoint: NSMakePoint(r.origin.x,r.origin.y+r.size.height*15.0/16.0)];
-    [down lineToPoint: NSMakePoint(r.origin.x+r.size.width/16.0,r.origin.y+r.size.height)];
-    [down lineToPoint: NSMakePoint(r.origin.x+r.size.width,r.origin.y+r.size.height/16.0)];
-    [down lineToPoint: NSMakePoint(r.origin.x+r.size.width*15.0/16.0,r.origin.y)];
+    [down moveToPoint: NSMakePoint(r.origin.x, r.origin.y+r.size.height*15.0f/16.0f)];
+    [down lineToPoint: NSMakePoint(r.origin.x+r.size.width/16.0f, r.origin.y+r.size.height)];
+    [down lineToPoint: NSMakePoint(r.origin.x+r.size.width, r.origin.y+r.size.height/16.0f)];
+    [down lineToPoint: NSMakePoint(r.origin.x+r.size.width*15.0f/16.0f, r.origin.y)];
     [down closePath];
     
     NSBezierPath * up = [NSBezierPath bezierPath];
-    [up moveToPoint: NSMakePoint(r.origin.x,r.origin.y+r.size.height/16.0)];
-    [up lineToPoint: NSMakePoint(r.origin.x+r.size.width*15.0/16.0,r.origin.y+r.size.height)];
-    [up lineToPoint: NSMakePoint(r.origin.x+r.size.width,r.origin.y+r.size.height*15.0/16.0)];
-    [up lineToPoint: NSMakePoint(r.origin.x+r.size.width/16.0,r.origin.y)];
+    [up moveToPoint: NSMakePoint(r.origin.x, r.origin.y+r.size.height/16.0f)];
+    [up lineToPoint: NSMakePoint(r.origin.x+r.size.width*15.0f/16.0f, r.origin.y+r.size.height)];
+    [up lineToPoint: NSMakePoint(r.origin.x+r.size.width, r.origin.y+r.size.height*15.0f/16.0f)];
+    [up lineToPoint: NSMakePoint(r.origin.x+r.size.width/16.0f, r.origin.y)];
     [up closePath];
     
     [[NSColor redColor] set];

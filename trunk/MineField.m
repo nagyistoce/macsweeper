@@ -26,7 +26,7 @@
                     columns: (int) c
                   questions: (BOOL) b
 {
-    if (self = [super init]) {
+    if ((self = [super init])) {
         int i;    
         srandom(time(0));
         
