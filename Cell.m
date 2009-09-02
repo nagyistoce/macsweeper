@@ -11,7 +11,7 @@
 @implementation Cell
 - (Cell*)init
 {
-    if (self = [super init]) {
+    if ((self = [super init])) {
         state = hidden;
         neighbors = 0;
         mined = NO;

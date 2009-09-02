@@ -8,23 +8,33 @@
 
 #import "MineController.h"
 
-static NSImage * initImage(NSString *path, NSString *name)
+static NSImage * initImage(NSString *name)
 {
 	/*
 	 iChat changed the file ending from .tiff to .tif, to support both OSs
 	 without doing any weird checks, try one, and then the other if there
 	 is a failure.
 	 */
-	NSString *tiger = @".tiff";
-	NSString *leopard = @".tif";
 	
-	NSImage *image = [[NSImage alloc] initWithContentsOfFile:[NSString stringWithFormat:@"%@/%@", path, [name stringByAppendingString:leopard] ] ];
+	NSBundle *iChatBundle = [[NSBundle alloc] initWithPath:[[NSWorkspace sharedWorkspace] absolutePathForAppBundleWithIdentifier:@"com.apple.iChat"]];
+	NSBundle *iChatSmileyBundle = [[NSBundle alloc] initWithPath:[NSString stringWithFormat:@"%@/%@", [iChatBundle builtInPlugInsPath], @"Standard.smileypack"]];
 	
-	if(image == nil)
-	{
-		image = [[NSImage alloc] initWithContentsOfFile:[NSString stringWithFormat:@"%@/%@", path, [name stringByAppendingString:tiger] ] ];	
+	NSString *imagePath = [iChatSmileyBundle pathForResource:[NSString stringWithFormat:@"%@.tif", name] ofType:nil];
+	
+	// Attempt to load the Leopard image location
+	if (imagePath == nil) {
+		imagePath = [iChatBundle pathForResource:@"%@.tif" ofType:nil];
 	}
 	
+	// Attempt to load the Tiger image location
+	if (imagePath == nil) {
+		imagePath = [iChatBundle pathForResource:@"%@.tiff" ofType:nil];
+	}
+	
+	[iChatSmileyBundle release];
+	[iChatBundle release];
+	
+	NSImage *image = [[NSImage alloc] initWithContentsOfFile:imagePath];
 	return image;
 }
 
@@ -46,19 +56,17 @@ static NSImage * initImage(NSString *path, NSString *name)
         "yuck"  - yuck.tiff, game won image
        images are borrowed from iChat, thus the names
      */
-    NSString *appPath = [[NSWorkspace sharedWorkspace] absolutePathForAppBundleWithIdentifier:@"com.apple.iChat"];
-    NSString *path = [NSString stringWithFormat:@"%@/%@", appPath, @"Contents/Resources" ];
 	
-    NSImage *smile = initImage(path, @"smile");
+    NSImage *smile = initImage(@"smile");
     [smile setName:@"smile"];
     
-    NSImage *gasp = initImage(path, @"gasp");
+    NSImage *gasp = initImage(@"gasp");
     [gasp setName:@"gasp"];
     
-    NSImage *frown = initImage(path, @"frown");
+    NSImage *frown = initImage(@"frown");
     [frown setName:@"frown"];
     
-    NSImage *yuck = initImage(path, @"yuck");
+    NSImage *yuck = initImage(@"yuck");
     [yuck setName:@"yuck"];
     
     scoreList[0] = beginnerScores;
@@ -462,7 +470,7 @@ static NSImage * initImage(NSString *path, NSString *name)
                                      @"TimerItem", nil];
 }
 
-- (void)newHighScoreWithDifficulty:(GameType)game andTime:(int)time
+- (void)newHighScoreWithDifficulty:(GameType)game andTime:(int)timeToComplete
 {
     NSString *gameTypeString = nil;
     if (game == kBeginner) gameTypeString = @"Beginner";
@@ -471,7 +479,7 @@ static NSImage * initImage(NSString *path, NSString *name)
     else return;
     
     [[newHighScoreForm cellAtIndex:0] setStringValue:gameTypeString];
-    [[newHighScoreForm cellAtIndex:1] setIntValue:time];
+    [[newHighScoreForm cellAtIndex:1] setIntValue:timeToComplete];
     
     [NSApp beginSheet: newHighScoreSheet 
        modalForWindow: mainWindow 
@@ -490,7 +498,7 @@ static NSImage * initImage(NSString *path, NSString *name)
     int i;
     for (i = 0; i < 3; ++i)
     {
-        if ([scores[i].name isEqualToString:@""] || scores[i].score >= time)
+        if ([scores[i].name isEqualToString:@""] || scores[i].score >= timeToComplete)
         {
             properPosition = i;
             break;
@@ -506,7 +514,7 @@ static NSImage * initImage(NSString *path, NSString *name)
         if (i == properPosition)
         {
             scores[i].name = [[newHighScoreForm cellAtIndex:2] stringValue];
-            scores[i].score = time;
+            scores[i].score = timeToComplete;
             break;
         }
     }
