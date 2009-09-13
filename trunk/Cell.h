@@ -3,7 +3,6 @@
 //  MacSweeper
 //
 //  Created by Morgan Conbere on 3/9/07.
-//  Copyright 2007. All rights reserved.
 //
 
 #import <Foundation/NSObject.h>
@@ -17,12 +16,12 @@ typedef enum {hidden, flagged, questioned, cleared} CellState;
     BOOL dirty;
 }
 
-- (Cell*)init;
+- (Cell *)init;
 
 - (BOOL)isMine;
-- (void)setMine: (BOOL) b;
+- (void)setMine:(BOOL)b;
 
-- (int)toggleStateWithQuestion: (BOOL) q;
+- (int)toggleStateWithQuestion:(BOOL)q;
 
 - (BOOL)isHidden;
 - (BOOL)isFlagged;
@@ -32,7 +31,7 @@ typedef enum {hidden, flagged, questioned, cleared} CellState;
 - (void)clear;
 - (void)flag;
 
-- (void)setNeighbors: (int) n;
+- (void)setNeighbors:(int)n;
 - (int)neighbors;
 
 - (BOOL)needsUpdate;

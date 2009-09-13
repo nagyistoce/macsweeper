@@ -90,7 +90,7 @@ static const GameSettings kExpertGame = {16, 30, 99};
 - (IBAction)newCustomGame:(id)sender;
 - (IBAction)cancelCustomGame:(id)sender;
 
-- (void)endGameWithTime:(int)seconds win:(bool)win;
+- (void)endGameWithTime:(int)seconds win:(BOOL)win;
 
 - (void)newHighScoreWithDifficulty:(GameType)game andTime:(int)time;
 - (IBAction)saveNewHighScore:(id)sender;
@@ -107,8 +107,8 @@ static const GameSettings kExpertGame = {16, 30, 99};
 - (void)mouseUpAction;
 
 // Toolbar delegation
-- (NSToolbarItem*)toolbar:(NSToolbar*)toolbar itemForItemIdentifier:(NSString*)itemIdentifier willBeInsertedIntoToolbar:(BOOL)flag;
-- (NSArray*)toolbarAllowedItemIdentifiers:(NSToolbar*)toolbar;
-- (NSArray*)toolbarDefaultItemIdentifiers:(NSToolbar*)toolbar;
+- (NSToolbarItem *)toolbar:(NSToolbar *)toolbar itemForItemIdentifier:(NSString *)itemIdentifier willBeInsertedIntoToolbar:(BOOL)flag;
+- (NSArray *)toolbarAllowedItemIdentifiers:(NSToolbar *)toolbar;
+- (NSArray *)toolbarDefaultItemIdentifiers:(NSToolbar *)toolbar;
 
 @end

@@ -3,13 +3,12 @@
 //  MacSweeper
 //
 //  Created by Morgan Conbere on 3/9/07.
-//  Copyright 2007. All rights reserved.
 //
 
 #import "Cell.h"
 
 @implementation Cell
-- (Cell*)init
+- (Cell *)init
 {
     if ((self = [super init])) {
         state = hidden;
@@ -26,12 +25,12 @@
     return mined;
 }
 
-- (void)setMine: (BOOL) b
+- (void)setMine:(BOOL)b
 {
     mined = b;
 }
 
-- (int)toggleStateWithQuestion: (BOOL) q
+- (int)toggleStateWithQuestion:(BOOL)q
 {
     [self changed];
     if (state == questioned) {

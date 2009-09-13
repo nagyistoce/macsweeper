@@ -23,6 +23,11 @@ enum {
 
 typedef enum {noClick, leftClick, rightClick} MouseState;
 
+typedef struct {
+    int x;
+    int y;
+} IntPoint;
+
 @interface MineView : NSView {
     int rows;
     int columns;
@@ -32,7 +37,7 @@ typedef enum {noClick, leftClick, rightClick} MouseState;
     GameState state;
     MouseState drag;
     
-    NSPoint mousePoint;
+    IntPoint mousePoint;
     
     MineField *field;
     
@@ -49,26 +54,26 @@ typedef enum {noClick, leftClick, rightClick} MouseState;
     float statusBarHeight;
 }
 
-- (void)newGameWithMines: (int) m
-                    rows: (int) r 
-                 columns: (int) c
-               questions: (BOOL) b;
+- (void)newGameWithMines:(int)m
+                    rows:(int)r 
+                 columns:(int)c
+               questions:(BOOL)b;
 
-- (void)setTimerField: (NSTextField*)timer andMinesLeftField: (NSTextField*)minesLeft;
+- (void)setTimerField:(NSTextField *)timer andMinesLeftField:(NSTextField *)minesLeft;
 - (id)delegate;
 - (void)setDelegate:(id)newDelegate;
 
 - (void)endGame;
 
-- (void)revealCellAtPoint: (NSPoint) p;
-- (void)toggleCellAtPoint: (NSPoint) p;
+- (void)revealCellAtPoint:(NSPoint)p;
+- (void)toggleCellAtPoint:(NSPoint)p;
 
-- (void)mouseDown: (NSEvent *) event;
-- (void)mouseDragged: (NSEvent *) event;
-- (void)mouseUp: (NSEvent *) event;
-- (void)rightMouseDown: (NSEvent *) event;
-- (void)rightMouseDragged: (NSEvent *) event;
-- (void)rightMouseUp: (NSEvent *) event;
+- (void)mouseDown:(NSEvent *)event;
+- (void)mouseDragged:(NSEvent *)event;
+- (void)mouseUp:(NSEvent *)event;
+- (void)rightMouseDown:(NSEvent *)event;
+- (void)rightMouseDragged:(NSEvent *)event;
+- (void)rightMouseUp:(NSEvent *)event;
 
 - (BOOL)updateMousePoint: (NSEvent *) event;
 - (BOOL)updateRightMousePoint: (NSEvent *) event;

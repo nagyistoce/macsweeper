@@ -8,13 +8,12 @@
 
 #import "MineController.h"
 
-static NSImage * initImage(NSString *name)
+static NSImage *initImage(NSString *name)
 {
-	/*
-	 iChat changed the file ending from .tiff to .tif, to support both OSs
-	 without doing any weird checks, try one, and then the other if there
-	 is a failure.
-	 */
+	// Grab the image from the iChat bundle. This would be easy if iChat didn't constantly change where the images were.
+    // In Tiger, the images were in the main Resources folder named *.tiff
+    // In Leopard, they renamed the files to *.tif
+    // In Snow Leopard, they moved the files into a bundle named "Standard.smileypack"
 	
 	NSBundle *iChatBundle = [[NSBundle alloc] initWithPath:[[NSWorkspace sharedWorkspace] absolutePathForAppBundleWithIdentifier:@"com.apple.iChat"]];
 	NSBundle *iChatSmileyBundle = [[NSBundle alloc] initWithPath:[NSString stringWithFormat:@"%@/%@", [iChatBundle builtInPlugInsPath], @"Standard.smileypack"]];
@@ -35,6 +34,7 @@ static NSImage * initImage(NSString *name)
 	[iChatBundle release];
 	
 	NSImage *image = [[NSImage alloc] initWithContentsOfFile:imagePath];
+    [image setName:name];
 	return image;
 }
 
@@ -48,27 +48,19 @@ static NSImage * initImage(NSString *name)
     
     [NSApp setDelegate:self];
 
-    /* Set up image names */
-    /* image names are:
-        "smile" - smile.tiff, default image
-        "gasp"  - gasp.tiff, mouse down image
-        "frown" - frown.tiff, game lost image
-        "yuck"  - yuck.tiff, game won image
-       images are borrowed from iChat, thus the names
-     */
+    // Set up image names
+    // image names are:
+    //  "smile" - smile.tif, default image
+    //  "gasp"  - gasp.tif, mouse down image
+    //  "frown" - frown.tif, game lost image
+    //  "yuck"  - yuck.tif, game won image
+    // images are borrowed from iChat, thus the names
 	
-    NSImage *smile = initImage(@"smile");
-    [smile setName:@"smile"];
-    
-    NSImage *gasp = initImage(@"gasp");
-    [gasp setName:@"gasp"];
-    
-    NSImage *frown = initImage(@"frown");
-    [frown setName:@"frown"];
-    
-    NSImage *yuck = initImage(@"yuck");
-    [yuck setName:@"yuck"];
-    
+    initImage(@"smile");    
+    initImage(@"gasp");
+    initImage(@"frown");
+    initImage(@"yuck");
+
     scoreList[0] = beginnerScores;
     scoreList[1] = intermediateScores;
     scoreList[2] = expertScores;
@@ -121,6 +113,7 @@ static NSImage * initImage(NSString *name)
         default:
             NSLog(@"Bad GameType %d, using beginner game.", currentGameType);
             currentSettings = kBeginnerGame;
+            break;
     }
     
     [mineView setTimerField:timerField andMinesLeftField:minesLeftField];
@@ -163,16 +156,16 @@ static NSImage * initImage(NSString *name)
 
 - (IBAction)customGame:(id)sender
 {
-    [NSApp beginSheet: customGameSheet 
-       modalForWindow: mainWindow 
-        modalDelegate: nil
-       didEndSelector: nil
-          contextInfo: nil];
+    [NSApp beginSheet:customGameSheet 
+       modalForWindow:mainWindow 
+        modalDelegate:nil
+       didEndSelector:nil
+          contextInfo:nil];
      
-    [NSApp runModalForWindow: customGameSheet];
+    [NSApp runModalForWindow:customGameSheet];
     
-    [NSApp endSheet: customGameSheet];
-    [customGameSheet orderOut: self];
+    [NSApp endSheet:customGameSheet];
+    [customGameSheet orderOut:self];
 }
 
 - (IBAction)newCustomGame:(id)sender
@@ -203,7 +196,7 @@ static NSImage * initImage(NSString *name)
     [NSApp stopModal];
 }
 
-- (void)endGameWithTime:(int)seconds win:(bool)win
+- (void)endGameWithTime:(int)seconds win:(BOOL)win
 {
     if (win)
         [smileyView setImage:[NSImage imageNamed:@"yuck"]];
@@ -286,25 +279,23 @@ static NSImage * initImage(NSString *name)
     [customMinesCell setObjectValue:[NSNumber numberWithInt:customMines]];
  
     // Set default high scores
-    int difficulty, tag;
     NSArray *highScoreNames = [defaults objectForKey:@"HighScoreNames"];
     NSArray *highScoreScores = [defaults objectForKey:@"HighScoreScores"];
     
-    for (difficulty = 0; difficulty < 3; ++difficulty)
+    for (int difficulty = 0; difficulty < 3; ++difficulty)
     {
         HighScore *scores = scoreList[difficulty];
         
-        for (tag = 0; tag < 3; ++tag)
+        for (int tag = 0; tag < 3; ++tag)
         {
-            scores[tag].name = [highScoreNames objectAtIndex:(difficulty*3+tag)];
-            scores[tag].score = [[highScoreScores objectAtIndex:(difficulty*3+tag)] intValue];;
+            scores[tag].name = [highScoreNames objectAtIndex:(difficulty * 3 + tag)];
+            scores[tag].score = [[highScoreScores objectAtIndex:(difficulty * 3 + tag)] intValue];;
         }
     }  
 }
 
 - (void)setHighScores
 {
-    int difficulty, tag;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSArray *tempNames = [defaults objectForKey:@"HighScoreNames"];
     NSArray *tempScores = [defaults objectForKey:@"HighScoreScores"];
@@ -313,26 +304,26 @@ static NSImage * initImage(NSString *name)
     NSMutableArray *highScoreScores = [NSMutableArray arrayWithCapacity:9];
     [highScoreScores addObjectsFromArray:tempScores];
     
-    for (difficulty = 0; difficulty < 3; ++difficulty)
+    for (int difficulty = 0; difficulty < 3; ++difficulty)
     {
         HighScore *scores = scoreList[difficulty];
         
-        for (tag = 0; tag < 3; ++tag)
+        for (int tag = 0; tag < 3; ++tag)
         {
-            [highScoreNames replaceObjectAtIndex:(difficulty*3+tag) withObject:scores[tag].name];
-            [highScoreScores replaceObjectAtIndex:(difficulty*3+tag) withObject:[NSNumber numberWithInt:scores[tag].score]];
+            [highScoreNames replaceObjectAtIndex:(difficulty * 3 + tag) withObject:scores[tag].name];
+            [highScoreScores replaceObjectAtIndex:(difficulty * 3 + tag) withObject:[NSNumber numberWithInt:scores[tag].score]];
         }
     } 
     
     [defaults setObject:highScoreNames forKey:@"HighScoreNames"];
     [defaults setObject:highScoreScores forKey:@"HighScoreScores"];    
     
-    for (difficulty = 0; difficulty < 3; ++difficulty)
+    for (int difficulty = 0; difficulty < 3; ++difficulty)
     {
         NSForm *form = formList[difficulty];
         HighScore *scores = scoreList[difficulty];
         
-        for (tag = 0; tag < 3; ++tag)
+        for (int tag = 0; tag < 3; ++tag)
         {
             NSFormCell *cell = [form cellAtIndex:tag];
             if (![scores[tag].name isEqualToString:@""])
@@ -383,7 +374,7 @@ static NSImage * initImage(NSString *name)
     
     if ( [itemIdentifier isEqualToString:@"TimerItem"] ) {
         if (!timerField) {
-            timerField = [[NSTextField alloc] initWithFrame: NSMakeRect(0,0,width,height)];
+            timerField = [[NSTextField alloc] initWithFrame: NSMakeRect(0, 0, width, height)];
             float fontSize = [NSFont systemFontSizeForControlSize:size];
             NSCell *cell = [timerField cell];
             NSFont *font = [NSFont fontWithName:[[cell font] fontName] size:fontSize];
@@ -405,9 +396,9 @@ static NSImage * initImage(NSString *name)
         [item setLabel: @"Time"];
         [item setPaletteLabel: @"Time Elapsed Counter"];
         [item setToolTip: @"Time Elapsed"];
-    } else if ( [itemIdentifier isEqualToString:@"MinesLeftItem"] ) {
+    } else if ([itemIdentifier isEqualToString:@"MinesLeftItem"]) {
         if (!minesLeftField) {
-            minesLeftField = [[NSTextField alloc] initWithFrame: NSMakeRect(0,0,width,height)];
+            minesLeftField = [[NSTextField alloc] initWithFrame:NSMakeRect(0, 0, width, height)];
             float fontSize = [NSFont systemFontSizeForControlSize:size];
             NSCell *cell = [minesLeftField cell];
             NSFont *font = [NSFont fontWithName:[[cell font] fontName] size:fontSize];
@@ -429,33 +420,29 @@ static NSImage * initImage(NSString *name)
         [item setLabel: @"Mines"];
         [item setPaletteLabel: @"Mines Left Counter"];
         [item setToolTip: @"Mines Left"];
-    } else if ( [itemIdentifier isEqualToString:@"SmileyItem"] ) {
-        /*
-        SmileyView *smileyView = [[SmileyView alloc] initWithFrame: NSMakeRect(0,0,18,18)];
-        [smileyView setDelegate: self];
-         */
+    } else if ([itemIdentifier isEqualToString:@"SmileyItem"]) {
         int smileySize = 18;
         if (!smileyView) {
-            smileyView = [[NSImageView alloc] initWithFrame: NSMakeRect(0,0,smileySize,smileySize)];
+            smileyView = [[NSImageView alloc] initWithFrame:NSMakeRect(0, 0, smileySize, smileySize)];
             [smileyView setImage:[NSImage imageNamed:@"smile"]];
-            [smileyView setTarget: self];
+            [smileyView setTarget:self];
         }
         
         [item setView: smileyView];
         
-        [item setMinSize: NSMakeSize(smileySize,smileySize)];
-        [item setMaxSize: NSMakeSize(smileySize,smileySize)];
+        [item setMinSize:NSMakeSize(smileySize, smileySize)];
+        [item setMaxSize:NSMakeSize(smileySize, smileySize)];
 
-        [item setLabel: @""];
-        [item setPaletteLabel: @"Status Display"];
-        [item setTarget: self];
-        [item setAction: @selector(newGame:)];
+        [item setLabel:@""];
+        [item setPaletteLabel:@"Status Display"];
+        [item setTarget:self];
+        [item setAction:@selector(newGame:)];
     }
     
     return [item autorelease];
 }
 
-- (NSArray*)toolbarAllowedItemIdentifiers:(NSToolbar*)toolbar
+- (NSArray *)toolbarAllowedItemIdentifiers:(NSToolbar *)toolbar
 {
     return [NSArray arrayWithObjects:@"MinesLeftItem",  
                                      @"SmileyItem",
@@ -463,7 +450,7 @@ static NSImage * initImage(NSString *name)
                                      NSToolbarFlexibleSpaceItemIdentifier, nil];
 }
 
-- (NSArray*)toolbarDefaultItemIdentifiers:(NSToolbar*)toolbar
+- (NSArray *)toolbarDefaultItemIdentifiers:(NSToolbar *)toolbar
 {
     return [NSArray arrayWithObjects:@"MinesLeftItem", NSToolbarFlexibleSpaceItemIdentifier,
                                      @"SmileyItem", NSToolbarFlexibleSpaceItemIdentifier,
@@ -481,22 +468,21 @@ static NSImage * initImage(NSString *name)
     [[newHighScoreForm cellAtIndex:0] setStringValue:gameTypeString];
     [[newHighScoreForm cellAtIndex:1] setIntValue:timeToComplete];
     
-    [NSApp beginSheet: newHighScoreSheet 
-       modalForWindow: mainWindow 
-        modalDelegate: nil
-       didEndSelector: nil
-          contextInfo: nil];
+    [NSApp beginSheet:newHighScoreSheet 
+       modalForWindow:mainWindow 
+        modalDelegate:nil
+       didEndSelector:nil
+          contextInfo:nil];
     
-    [NSApp runModalForWindow: newHighScoreSheet];
+    [NSApp runModalForWindow:newHighScoreSheet];
     
-    [NSApp endSheet: newHighScoreSheet];
+    [NSApp endSheet:newHighScoreSheet];
     [newHighScoreSheet orderOut: self];
     
     HighScore *scores = scoreList[game];
     
     int properPosition = -1;
-    int i;
-    for (i = 0; i < 3; ++i)
+    for (int i = 0; i < 3; ++i)
     {
         if ([scores[i].name isEqualToString:@""] || scores[i].score >= timeToComplete)
         {
@@ -507,7 +493,7 @@ static NSImage * initImage(NSString *name)
     if (properPosition == -1)
         return;
     
-    for (i = 2; i >=0; --i)
+    for (int i = 2; i >= 0; --i)
     {
         if (i >= properPosition && i < 2)
             scores[i+1] = scores[i];
