@@ -3,7 +3,6 @@
 //  MacSweeper
 //
 //  Created by Morgan Conbere on 3/12/07.
-//  Copyright 2007. All rights reserved.
 //
 
 #import "MineView.h"
@@ -12,8 +11,8 @@
 
 @implementation MineView
 
-- (id)initWithFrame:(NSRect) frame {
-	if ((self = [super initWithFrame: frame])) {
+- (id)initWithFrame:(NSRect)frame {
+	if ((self = [super initWithFrame:frame])) {
 		field = nil;
         
         cellWidth = MSCellWidth;
@@ -37,18 +36,18 @@
         //float backGray = 180 / 255.0;
         //float shadowGray = 110 / 255.0;
         
-        [colors setColor: [NSColor whiteColor] forKey:@"foreground"];
-		[colors setColor: [NSColor colorWithDeviceRed: backGray green: backGray blue: backGray alpha: 1] forKey:@"background"];
-		[colors setColor: [NSColor colorWithDeviceRed: shadowGray green: shadowGray blue: shadowGray alpha: 1] forKey:@"shadow"];
-		[colors setColor: [NSColor clearColor] forKey:@"0"];
-		[colors setColor: [NSColor blueColor] forKey:@"1"];
-		[colors setColor: [NSColor colorWithDeviceRed: 0.0f green: 0.443f blue: 0.0f alpha: 1.0f] forKey:@"2"];
-		[colors setColor: [NSColor redColor] forKey:@"3"];
-		[colors setColor: [NSColor colorWithDeviceRed: 0.0f green: 0.0f blue: 0.443f alpha: 1.0f] forKey:@"4"];
-		[colors setColor: [NSColor colorWithDeviceRed: 0.443f green: 0.0f blue: 0.0f alpha: 1.0f] forKey:@"5"];
-		[colors setColor: [NSColor colorWithDeviceRed: 0.0f green: shadowGray blue: shadowGray alpha: 1.0f] forKey:@"6"];
-		[colors setColor: [NSColor blackColor] forKey:@"7"];
-		[colors setColor: [NSColor colorWithDeviceRed: shadowGray green: shadowGray blue: shadowGray alpha: 1.0f] forKey:@"8"];
+        [colors setColor:[NSColor whiteColor] forKey:@"foreground"];
+		[colors setColor:[NSColor colorWithDeviceRed:backGray green:backGray blue:backGray alpha:1.0f] forKey:@"background"];
+		[colors setColor:[NSColor colorWithDeviceRed:shadowGray green:shadowGray blue:shadowGray alpha:1.0f] forKey:@"shadow"];
+		[colors setColor:[NSColor clearColor] forKey:@"0"];
+		[colors setColor:[NSColor blueColor] forKey:@"1"];
+		[colors setColor:[NSColor colorWithDeviceRed:0.0f green:0.443f blue:0.0f alpha:1.0f] forKey:@"2"];
+		[colors setColor:[NSColor redColor] forKey:@"3"];
+		[colors setColor:[NSColor colorWithDeviceRed:0.0f green:0.0f blue:0.443f alpha:1.0f] forKey:@"4"];
+		[colors setColor:[NSColor colorWithDeviceRed:0.443f green:0.0f blue:0.0f alpha:1.0f] forKey:@"5"];
+		[colors setColor:[NSColor colorWithDeviceRed:0.0f green:shadowGray blue:shadowGray alpha:1.0f] forKey:@"6"];
+		[colors setColor:[NSColor blackColor] forKey:@"7"];
+		[colors setColor:[NSColor colorWithDeviceRed:shadowGray green:shadowGray blue:shadowGray alpha:1.0f] forKey:@"8"];
         
         
 		srandom(time(0));
@@ -57,7 +56,7 @@
 	return self;
 }
 
-- (void)setTimerField: (NSTextField*)tf andMinesLeftField: (NSTextField*)mlf
+- (void)setTimerField:(NSTextField *)tf andMinesLeftField:(NSTextField *)mlf
 {
     timerField = tf;
     minesLeftField = mlf;
@@ -74,7 +73,7 @@
 }
 
 - (void)awakeFromNib {
-	[[self window] setAcceptsMouseMovedEvents: YES];
+	[[self window] setAcceptsMouseMovedEvents:YES];
 }
 
 // Responding
@@ -114,18 +113,18 @@
     NSRect frame = [self frame];
     
     size_t oldHeight = frame.size.height;
-    frame.size.width = columns*cellWidth;
-    frame.size.height = rows*cellHeight;
+    frame.size.width = columns * cellWidth;
+    frame.size.height = rows * cellHeight;
     
     windowFrame.size = frame.size;
     windowFrame.origin.y += oldHeight - frame.size.height;
     
-    [window setFrame: [window frameRectForContentRect: windowFrame]
-             display: YES 
-             animate: NO];
+    [window setFrame:[window frameRectForContentRect:windowFrame]
+             display:YES
+             animate:NO];
 }
 
-- (void)newGameWithMines: (int) m rows: (int) r columns: (int) c questions: (BOOL) b {
+- (void)newGameWithMines:(int)m rows:(int)r columns:(int)c questions:(BOOL)b {
     rows = r;
     columns = c;
     mines = m;
@@ -134,7 +133,7 @@
 	/* set up the new internal game */
 	[field release];
 	state = gameWait;
-	field = [[MineField alloc] initWithMines: m rows: r columns: c questions: b];
+	field = [[MineField alloc] initWithMines:m rows:r columns:c questions:b];
 	
 	/* reset timer */
     if (timer)
@@ -144,10 +143,10 @@
     }
     
 	seconds = 0;
-	[timerField setIntValue: seconds];
+	[timerField setIntValue:seconds];
     [minesLeftField setIntValue:[field minesLeft]];
 	
-	[self setNeedsDisplay: YES];
+	[self setNeedsDisplay:YES];
 }
 
 - (void)endGame {
@@ -157,55 +156,54 @@
         timer = nil;
 	}
     if ([delegate respondsToSelector:@selector(endGameWithTime:win:)])
-        [delegate endGameWithTime:seconds win:(state==gameWin)];
+        [delegate endGameWithTime:seconds win:(state == gameWin)];
 }
 
-- (void)revealCellAtPoint: (NSPoint) p {
+- (void)revealCellAtPoint:(NSPoint)p {
 	if (state == gameWait) {
-		//NSLog(@"Starting game!");
-		timer = [NSTimer scheduledTimerWithTimeInterval: 1
-												 target: self
-											   selector: @selector(clock:)
-											   userInfo: nil
-												repeats: YES];
+		timer = [NSTimer scheduledTimerWithTimeInterval:1
+												 target:self
+											   selector:@selector(clock:)
+											   userInfo:nil
+												repeats:YES];
 	}
-	state = [field revealRow: (int) (p.y/cellHeight) column: (int) (p.x/cellWidth)];
-	[self setNeedsDisplay: YES];
+	state = [field revealRow:(int)(p.y / cellHeight) column:(int)(p.x / cellWidth)];
+	[self setNeedsDisplay:YES];
 	if (state != gameGo) [self endGame];
 }
 
 - (void)toggleCellAtPoint: (NSPoint) p {
-	[field toggleRow: (int) (p.y/cellHeight) column: (int) (p.x/cellWidth)];
+	[field toggleRow:(int)(p.y / cellHeight) column:(int)(p.x / cellWidth)];
     [minesLeftField setIntValue:[field minesLeft]];
-	[self setNeedsDisplay: YES];
+	[self setNeedsDisplay:YES];
 }
 
-- (void)mouseDown: (NSEvent *) event {
+- (void)mouseDown:(NSEvent *)event {
 	if ([event modifierFlags] & NSControlKeyMask) {
-		[self rightMouseDown: event];
+		[self rightMouseDown:event];
 		return;
 	}
 	if (state == gameWait || state == gameGo) {
 		if ([delegate respondsToSelector:@selector(mouseDownAction)])
             [delegate mouseDownAction];
         drag = leftClick;
-		[self updateMousePoint: event];
+		[self updateMousePoint:event];
 	}
 }
 
-- (void)mouseDragged: (NSEvent *) event {
+- (void)mouseDragged:(NSEvent *)event {
 	if ([event modifierFlags] & NSControlKeyMask) {
-		[self rightMouseDragged: event];
+		[self rightMouseDragged:event];
 		return;
 	}
 	if (state == gameWait || state == gameGo) {
-		[self updateMousePoint: event];
+		[self updateMousePoint:event];
 	}
 }
 
-- (void)mouseUp: (NSEvent *) event {
+- (void)mouseUp:(NSEvent *)event {
 	if ([event modifierFlags] & NSControlKeyMask) {
-		[self rightMouseUp: event];
+		[self rightMouseUp:event];
 		return;
 	}
 	drag = noClick;
@@ -216,48 +214,49 @@
 	}
     if ([delegate respondsToSelector:@selector(mouseUpAction)])
         [delegate mouseUpAction];
-	NSPoint mouse = [self convertPoint: [event locationInWindow] fromView: nil];
-	[self revealCellAtPoint: mouse];
+	NSPoint mouse = [self convertPoint:[event locationInWindow] fromView:nil];
+	[self revealCellAtPoint:mouse];
     [minesLeftField setIntValue:[field minesLeft]];
 }
 
-- (void)rightMouseDown: (NSEvent *) event {
+- (void)rightMouseDown:(NSEvent *)event {
 	if (state != gameLose) {
         if ([delegate respondsToSelector:@selector(mouseDownAction)])
             [delegate mouseDownAction];
 		drag = rightClick;
-		[self updateRightMousePoint: event];		
+		[self updateRightMousePoint:event];		
 	}
 }
 
-- (void)rightMouseDragged: (NSEvent *) event {
+- (void)rightMouseDragged:(NSEvent *)event {
 	if (state != gameLose) {
-		[self updateRightMousePoint: event];
+		[self updateRightMousePoint:event];
 	}
 }
 
-- (void)rightMouseUp: (NSEvent *) event {
+- (void)rightMouseUp:(NSEvent *)event {
     if ([delegate respondsToSelector:@selector(mouseUpAction)])
         [delegate mouseUpAction];
 	drag = noClick;
-	NSPoint mouse = [self convertPoint: [event locationInWindow] fromView: nil];
-	[self toggleCellAtPoint: mouse];
+	NSPoint mouse = [self convertPoint:[event locationInWindow] fromView:nil];
+	[self toggleCellAtPoint:mouse];
 }
 
-- (BOOL)updateMousePoint: (NSEvent *) event {
-	int x, y;
-	NSPoint mouse = [self convertPoint: [event locationInWindow] fromView: nil];
-	y = (int)floor(mouse.y/cellHeight);
-	x = (int)floor(mouse.x/cellWidth);
+- (BOOL)updateMousePoint:(NSEvent *)event {
+	int x;
+    int y;
+	NSPoint mouse = [self convertPoint:[event locationInWindow] fromView:nil];
+	y = (int)floor(mouse.y / cellHeight);
+	x = (int)floor(mouse.x / cellWidth);
     BOOL result = NO;
  
-	if ( x!=mousePoint.x || y!=mousePoint.y ) {
-        int oldX = (int)mousePoint.x;
-        int oldY = (int)mousePoint.y;
+	if (x != mousePoint.x || y != mousePoint.y) {
+        int oldX = mousePoint.x;
+        int oldY = mousePoint.y;
         
         if (drag==leftClick) {
-            [[field cellAtRow: y    column: x   ] changed];
-            [[field cellAtRow: oldY column: oldX] changed];
+            [[field cellAtRow:y    column:x   ] changed];
+            [[field cellAtRow:oldY column:oldX] changed];
         }
         /*
         else if (drag==rightClick) {
@@ -273,7 +272,7 @@
                 }
             }
         }*/
-		[self setNeedsDisplay: YES];
+		[self setNeedsDisplay:YES];
 		result = YES;
 	}
     
@@ -283,15 +282,16 @@
 	return result;
 }
 
-- (BOOL)updateRightMousePoint: (NSEvent *) event {
-	int x, y;
-	NSPoint mouse = [self convertPoint: [event locationInWindow] fromView: nil];
-	y = (int)floor(mouse.y/cellHeight);
-	x = (int)floor(mouse.x/cellWidth);
+- (BOOL)updateRightMousePoint:(NSEvent *)event {
+	int x;
+    int y;
+	NSPoint mouse = [self convertPoint:[event locationInWindow] fromView:nil];
+	y = (int)floor(mouse.y / cellHeight);
+	x = (int)floor(mouse.x / cellWidth);
 	
-	if ( x!=mousePoint.x || y!=mousePoint.y ) {
-		[[field cellAtRow: (int) y column: (int) x] changed];
-		[[field cellAtRow: (int) mousePoint.y column: (int) mousePoint.x] changed];
+	if (x != mousePoint.x || y != mousePoint.y) {
+		[[field cellAtRow:y column:x] changed];
+		[[field cellAtRow:mousePoint.y column:mousePoint.x] changed];
 		mousePoint.x = x;
 		mousePoint.y = y;
 		[self setNeedsDisplay: YES];
@@ -300,26 +300,27 @@
 	return NO;
 }
 
-- (void)clock: (NSTimer *) sender {
-	if ( (seconds < 999) && (state == gameGo) ) {
+- (void)clock:(NSTimer *)sender {
+	if ((seconds < 999) && (state == gameGo)) {
 		seconds++;
-		[timerField setIntValue: seconds];
+		[timerField setIntValue:seconds];
 	}
 	else if (state != gameGo) {
 		NSLog(@"Timer running while game stopped");
 	}
 }
 
-- (void)drawRect: (NSRect) rect {
-	int i, j;
+- (void)drawRect:(NSRect)rect {
+	int i;
+    int j;
     
 	/* Cell rectangle */
-	NSRect cellRect = NSMakeRect(0,0,cellWidth,cellHeight);
+	NSRect cellRect = NSMakeRect(0, 0, cellWidth, cellHeight);
 	
 	for (i = 0; i < rows; i++) {
 		for (j = 0; j < columns; j++) {
-			if ([[field cellAtRow: i column: j] needsUpdate])
-                [self drawCellAtRow: i column: j inRect: cellRect];
+			if ([[field cellAtRow:i column:j] needsUpdate])
+                [self drawCellAtRow:i column:j inRect:cellRect];
 			cellRect.origin.x += cellWidth;
 		}
 		cellRect.origin.y += cellHeight;

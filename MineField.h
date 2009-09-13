@@ -3,7 +3,6 @@
 //  MacSweeper
 //
 //  Created by Morgan Conbere on 3/12/07.
-//  Copyright 2007. All rights reserved.
 //
 
 #import <Foundation/NSObject.h>
@@ -17,7 +16,7 @@ typedef enum {gameWait, gameGo, gameWin, gameLose} GameState;
     
     BOOL questions;
     
-    Cell** mines;
+    Cell **mines;
     
     int revealed;
     int flaggedCells;
@@ -25,32 +24,28 @@ typedef enum {gameWait, gameGo, gameWin, gameLose} GameState;
     int minesTotal;
 }
 
--(MineField*) initWithMines: (int) m
-                       rows: (int) r
-                    columns: (int) c;
+- (MineField *)initWithMines:(int)m rows:(int)r columns:(int)c;
 
--(MineField*) initWithMines: (int) m
-                       rows: (int) r
-                    columns: (int) c
-                  questions: (BOOL) b;
+- (MineField *)initWithMines:(int)m rows:(int)r columns:(int)c questions:(BOOL)b;
 
--(int) countNeighborsOfRow: (int) r column: (int) c;
+- (int)countNeighborsOfRow:(int)r column:(int)c;
 
--(int) countFlaggedOfRow: (int) r column: (int) c;
+- (int)countFlaggedOfRow:(int)r column:(int)c;
 
--(void) distributeMines: (int) m withClickAtRow: (int) r column: (int) c;
+- (void)distributeMines:(int)m withClickAtRow:(int)r column:(int)c;
 
--(int) rows;
+- (int)rows;
 
--(int) cols;
+- (int)cols;
 
--(int) minesLeft;
+- (int)minesLeft;
 
--(Cell*) cellAtRow: (int) r column: (int) c;
+- (Cell *)cellAtRow:(int)r column:(int)c;
 
--(GameState) revealRow: (int) r column: (int) c;
+- (GameState)revealRow:(int)r column:(int)c;
 
--(int) toggleRow: (int) r column: (int) c;
+- (int)toggleRow:(int)r column:(int)c;
 
--(void) displayMines;
+- (void)displayMines;
+
 @end
