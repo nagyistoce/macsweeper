@@ -2,7 +2,7 @@
 
 = Introduction =
 
-MacSweeper was written by Morgan Conbere during the summer of 2007. At the time it was born out of frustration with the existing Minesweeper applications that existed for the platform, and the desire to learn more about Cocoa and Objective-C.
+!MacSweeper was written by Morgan Conbere during the summer of 2007. At the time it was born out of frustration with the existing Minesweeper applications that existed for the platform, and the desire to learn more about Cocoa and Objective-C.
 
 
 = Details =
