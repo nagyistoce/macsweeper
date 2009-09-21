@@ -9,7 +9,7 @@ MacSweeper was written by Morgan Conbere during the summer of 2007. At the time 
 
 The original project was hosted at http://www.cs.hmc.edu/~mconbere/macsweeper/. The first version was released in June 2007, and it was updated with additional features and refinements over time.
 
-
+|| Version 0.3.2 || (September 3, 2009) || Snow Leopard compatibility. ||
 || Version 0.3.1 || (August 9, 2008) || Leopard compatibility, cleaned up source code. ||
 || Version 0.3 || (August 19, 2007) || More cleanup, new icon, smiley face (borrowed from iChat). ||
 || Version 0.2.2 || (June 30, 2007) || Cleaned up the menus, added keyboard shortcuts, and created a help dialog. ||
