@@ -26,10 +26,20 @@ enum {
 
 typedef enum {noClick, leftClick, rightClick} MouseState;
 
+
+// Model an int-point struct after NSPoint
 typedef struct {
     int x;
     int y;
 } IntPoint;
+
+NS_INLINE IntPoint MakeIntPoint(int x, int y)
+{
+    IntPoint p;
+    p.x = x;
+    p.y = y;
+    return p;
+}
 
 @interface MineView : NSView {
 @private
@@ -40,6 +50,7 @@ typedef struct {
     MouseState drag;
     
     IntPoint mousePoint;
+    IntPoint deathPoint;
     
     MineField *field;
     

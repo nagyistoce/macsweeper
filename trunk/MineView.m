@@ -35,7 +35,7 @@
         // Default Microsoft colors
         //float backGray = 180 / 255.0;
         //float shadowGray = 110 / 255.0;
-        
+
         [colors setColor:[NSColor whiteColor] forKey:@"foreground"];
 		[colors setColor:[NSColor colorWithDeviceRed:backGray green:backGray blue:backGray alpha:1.0f] forKey:@"background"];
 		[colors setColor:[NSColor colorWithDeviceRed:shadowGray green:shadowGray blue:shadowGray alpha:1.0f] forKey:@"shadow"];
@@ -48,7 +48,9 @@
 		[colors setColor:[NSColor colorWithDeviceRed:0.0f green:shadowGray blue:shadowGray alpha:1.0f] forKey:@"6"];
 		[colors setColor:[NSColor blackColor] forKey:@"7"];
 		[colors setColor:[NSColor colorWithDeviceRed:shadowGray green:shadowGray blue:shadowGray alpha:1.0f] forKey:@"8"];
-        
+
+        mousePoint = MakeIntPoint(-1, -1);
+        deathPoint = mousePoint;
         
 		srandom(time(0));
 		timer = nil;
@@ -170,8 +172,12 @@
 												repeats:YES];
 	}
 	state = [field revealRow:(int)(p.y / cellHeight) column:(int)(p.x / cellWidth)];
+    deathPoint = mousePoint;
+    mousePoint = MakeIntPoint(-1, -1);
 	[self setNeedsDisplay:YES];
-	if (state != gameGo) [self endGame];
+	if (state != gameGo) {
+        [self endGame];
+    }
 }
 
 - (void)toggleCellAtPoint: (NSPoint) p {
@@ -216,6 +222,7 @@
 	}
     if ([delegate respondsToSelector:@selector(mouseUpAction)])
         [delegate mouseUpAction];
+    
 	NSPoint mouse = [self convertPoint:[event locationInWindow] fromView:nil];
 	[self revealCellAtPoint:mouse];
     [minesLeftField setIntValue:[field minesLeft]];

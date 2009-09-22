@@ -15,7 +15,7 @@
 	Cell *cell = [field cellAtRow:r column:c];
     
 	if (state == gameLose) {
-		if ((mousePoint.x == c) && (mousePoint.y == r)) {
+		if ((deathPoint.x == c) && (deathPoint.y == r)) {
 			[[NSColor redColor] set];
 			[NSBezierPath fillRect:rect];
 			[self drawCellClearedBackgroundInRect:rect];
