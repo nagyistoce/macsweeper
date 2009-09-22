@@ -1,8 +1,16 @@
 #summary The roadmap of the future of the MacSweeper project as it moves towards version 1.0.
 
+=Released=
+
 ==Version 0.4==
   * User interface tweaking:
     * 3x3 grid block UI when clicking on already revealed cells.
+
+----
+
+=Unreleased=
+
+==Version 0.4.x==
     * Toolbar tweaks to make timer and mines left fit better inside the window.
 
 ==Version 0.5==
