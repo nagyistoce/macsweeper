@@ -4,6 +4,7 @@
 //
 //  Created by Morgan Conbere on 3/13/07.
 //
+#pragma once
 
 #import <Cocoa/Cocoa.h>
 #import "MineView.h"
@@ -30,13 +31,13 @@ static const GameSettings kBeginnerGame = {9, 9, 10};
 static const GameSettings kIntermediateGame = {16, 16, 40};
 static const GameSettings kExpertGame = {16, 30, 99};
 
-@interface MineController : NSWindowController {
+@interface MineController : NSWindowController <MineFieldDelegate> {
+@private
     // Main minesweeper view
     IBOutlet MineView *mineView;
     
     // Windows and panels
     IBOutlet NSWindow *mainWindow;
-    IBOutlet NSWindow *window;
     IBOutlet NSPanel *customGameSheet;
     IBOutlet NSPanel *newHighScoreSheet;
     IBOutlet NSPanel *highScoresPanel;

@@ -4,6 +4,10 @@
 //
 //  Created by Morgan Conbere on 5/9/07.
 //
+#pragma once
+
+#import <Cocoa/Cocoa.h>
+#import "MineView.h"
 
 //
 // Notes on drawing:
@@ -12,9 +16,6 @@
 // flipped the transformation matrix around and used the prefabricated object.
 // This shouldn't be too hard, I just need to do it.
 //
-
-#import <Cocoa/Cocoa.h>
-#import "MineView.h"
 
 @interface MineView (Drawing)
 

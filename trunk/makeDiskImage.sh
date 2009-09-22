@@ -10,3 +10,5 @@ sed -e "s/{VERSION}/${VERSION}/" MacSweeper\ ReadMe.rtf > _tmp/MacSweeper\ ReadM
 DMG_NAME=MacSweeper-${VERSION}
 rm -f ${DMG_NAME}.dmg
 hdiutil create -srcfolder _tmp -volname ${DMG_NAME} ${DMG_NAME}.dmg
+
+rm -rf _tmp

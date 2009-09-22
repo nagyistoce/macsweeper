@@ -4,15 +4,18 @@
 //
 //  Created by Morgan Conbere on 3/12/07.
 //
+#pragma once
 
 #import <Cocoa/Cocoa.h>
 #import "MineField.h"
 
-@interface NSObject (MineFieldDelegateMethods)
+@protocol MineFieldDelegate <NSObject>
+
 - (void)newGame:(id)sender;
 - (void)endGameWithTime:(int)seconds win:(bool)win;
 - (void)mouseUpAction;
 - (void)mouseDownAction;
+
 @end
 
 enum {
@@ -29,10 +32,9 @@ typedef struct {
 } IntPoint;
 
 @interface MineView : NSView {
+@private
     int rows;
-    int columns;
-    BOOL questions;
-    
+    int columns;    
     int mines;
     GameState state;
     MouseState drag;
@@ -47,7 +49,7 @@ typedef struct {
     int seconds;
     NSTextField *timerField;
     NSTextField *minesLeftField;
-    id delegate;
+    id <MineFieldDelegate> delegate;
     
     float cellHeight;
     float cellWidth;
@@ -60,8 +62,8 @@ typedef struct {
                questions:(BOOL)b;
 
 - (void)setTimerField:(NSTextField *)timer andMinesLeftField:(NSTextField *)minesLeft;
-- (id)delegate;
-- (void)setDelegate:(id)newDelegate;
+- (id <MineFieldDelegate>)delegate;
+- (void)setDelegate:(id <MineFieldDelegate>)newDelegate;
 
 - (void)endGame;
 

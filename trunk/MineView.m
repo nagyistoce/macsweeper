@@ -161,6 +161,8 @@
 
 - (void)revealCellAtPoint:(NSPoint)p {
 	if (state == gameWait) {
+        seconds = 1; // The game starts at 1 second
+        [timerField setIntValue:seconds];
 		timer = [NSTimer scheduledTimerWithTimeInterval:1
 												 target:self
 											   selector:@selector(clock:)
@@ -192,7 +194,7 @@
 }
 
 - (void)mouseDragged:(NSEvent *)event {
-	if ([event modifierFlags] & NSControlKeyMask) {
+	if (drag == rightClick) {
 		[self rightMouseDragged:event];
 		return;
 	}
@@ -202,7 +204,7 @@
 }
 
 - (void)mouseUp:(NSEvent *)event {
-	if ([event modifierFlags] & NSControlKeyMask) {
+	if (drag == rightClick) {
 		[self rightMouseUp:event];
 		return;
 	}
@@ -224,13 +226,13 @@
         if ([delegate respondsToSelector:@selector(mouseDownAction)])
             [delegate mouseDownAction];
 		drag = rightClick;
-		[self updateRightMousePoint:event];		
+		[self updateMousePoint:event];		
 	}
 }
 
 - (void)rightMouseDragged:(NSEvent *)event {
 	if (state != gameLose) {
-		[self updateRightMousePoint:event];
+		[self updateMousePoint:event];
 	}
 }
 
@@ -243,22 +245,34 @@
 }
 
 - (BOOL)updateMousePoint:(NSEvent *)event {
-	int x;
-    int y;
 	NSPoint mouse = [self convertPoint:[event locationInWindow] fromView:nil];
-	y = (int)floor(mouse.y / cellHeight);
-	x = (int)floor(mouse.x / cellWidth);
+	int y = (int)floor(mouse.y / cellHeight);
+	int x = (int)floor(mouse.x / cellWidth);
     BOOL result = NO;
  
 	if (x != mousePoint.x || y != mousePoint.y) {
         int oldX = mousePoint.x;
         int oldY = mousePoint.y;
         
-        if (drag==leftClick) {
-            [[field cellAtRow:y    column:x   ] changed];
+        if (drag==leftClick || drag==rightClick) {
+            Cell *cell = [field cellAtRow:y column:x];
+            [cell changed];
             [[field cellAtRow:oldY column:oldX] changed];
+            
+            if (drag==leftClick && [cell isCleared]) {
+                for (int i = y-1; i <= y+1; i++) {
+                    for (int j = x-1; j <= x+1; j++) {
+                        [[field cellAtRow: i column: j] changed];
+                    }
+                }
+                for (int i = oldY-1; i <= oldY+1; i++) {
+                    for (int j = oldX-1; j <= oldX+1; j++) {
+                        [[field cellAtRow: i column: j] changed];
+                    }
+                }
+            }
         }
-        /*
+
         else if (drag==rightClick) {
             int i, j;
             for (i = y-1; i <= y+1; i++) {
@@ -271,7 +285,8 @@
                     [[field cellAtRow: i column: j] changed];
                 }
             }
-        }*/
+        }
+
 		[self setNeedsDisplay:YES];
 		result = YES;
 	}
@@ -283,11 +298,9 @@
 }
 
 - (BOOL)updateRightMousePoint:(NSEvent *)event {
-	int x;
-    int y;
 	NSPoint mouse = [self convertPoint:[event locationInWindow] fromView:nil];
-	y = (int)floor(mouse.y / cellHeight);
-	x = (int)floor(mouse.x / cellWidth);
+	int y = (int)floor(mouse.y / cellHeight);
+	int x = (int)floor(mouse.x / cellWidth);
 	
 	if (x != mousePoint.x || y != mousePoint.y) {
 		[[field cellAtRow:y column:x] changed];
@@ -311,14 +324,11 @@
 }
 
 - (void)drawRect:(NSRect)rect {
-	int i;
-    int j;
-    
 	/* Cell rectangle */
 	NSRect cellRect = NSMakeRect(0, 0, cellWidth, cellHeight);
 	
-	for (i = 0; i < rows; i++) {
-		for (j = 0; j < columns; j++) {
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < columns; j++) {
 			if ([[field cellAtRow:i column:j] needsUpdate])
                 [self drawCellAtRow:i column:j inRect:cellRect];
 			cellRect.origin.x += cellWidth;
