@@ -9,6 +9,7 @@
 
 The original project was hosted at http://www.cs.hmc.edu/~mconbere/macsweeper/. The first version was released in June 2007, and it was updated with additional features and refinements over time.
 
+|| Version 0.4.0 || (September 21, 2009) || Extensive code clean up and slight interface tweaks. ||
 || Version 0.3.2 || (September 3, 2009) || Snow Leopard compatibility. ||
 || Version 0.3.1 || (August 9, 2008) || Leopard compatibility, cleaned up source code. ||
 || Version 0.3 || (August 19, 2007) || More cleanup, new icon, smiley face (borrowed from iChat). ||
