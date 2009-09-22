@@ -38,23 +38,23 @@
 	[[colors colorWithKey:@"background"] set];
 	[NSBezierPath fillRect:rect];
     
-	if (drag == leftClick) {
+	if (drag == leftClick || drag == rightClick) {
         int x = mousePoint.x;
         int y = mousePoint.y;
-		if ( x==c && y==r && [cell isHidden]) {
+		if (x==c && y==r && [cell isHidden]) {
 			[self drawCellClearedBackgroundInRect: rect];
 			return;
 		}
+        
+        if (drag == leftClick) {
+            if ([[field cellAtRow:y column:x] isCleared]) {
+                if ( (x==c-1 || x==c || x==c+1) && (y==r-1 || y==r || y==r+1) && [cell isHidden]) {
+                    [self drawCellClearedBackgroundInRect: rect];
+                    return;
+                }
+            }
+        }
 	}
-    /*
-    if (drag == rightClick) {
-        int x = (int)mousePoint.x;
-        int y = (int)mousePoint.y;
-		if ( (x==c-1 || x==c || x==c+1) && (y==r-1 || y==r || y==r+1) && [cell isHidden]) {
-			[self drawCellClearedBackgroundInRect: rect];
-			return;
-		}
-    }*/
     
 	NSString *text = nil;
 	NSColor *color = [NSColor blackColor];	

@@ -4,6 +4,7 @@
 //
 //  Created by Morgan Conbere on 3/12/07.
 //
+#pragma once
 
 #import <Foundation/NSObject.h>
 #import "Cell.h"
@@ -11,6 +12,7 @@
 typedef enum {gameWait, gameGo, gameWin, gameLose} GameState;
 
 @interface MineField : NSObject {
+@private
     int rows;
     int cols;
     

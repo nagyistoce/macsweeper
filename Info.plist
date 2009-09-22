@@ -13,7 +13,7 @@
 	<key>CFBundleIconFile</key>
 	<string>minesweeper</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.mconbere.MacSweeper</string>
+	<string>org.conbere.MacSweeper</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -23,7 +23,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>0.3.2</string>
+	<string>0.4.0</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
