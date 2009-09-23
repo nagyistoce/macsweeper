@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>MacSweeper</title>
+        <link>http://code.google.com/p/macsweeper</link>
+        <description>A Minesweeper clone for OS X</description>
+        <language>en-us</language>
+        
+        <item>
+            <title>0.4.0</title>
+            <link>http://macsweeper.googlecode.com/files/MacSweeper-0.4.0.dmg</link>
+            <description>Version 0.4.0</description>
+            <pubDate>Mon, 21 Sep 2009 00:00:00 -0000</pubDate>
+            <guid>0.4.0</guid>
+        </item>
+    </channel>
+</rss>
