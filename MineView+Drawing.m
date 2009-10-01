@@ -75,7 +75,9 @@
     
 	if (text) {
 		/* Set up attributes dictionary */
-		NSFont *font = [NSFont fontWithName:@"Helvetica-Bold" size:12]; 
+        CGFloat minDimension = cellWidth < cellHeight ? cellWidth : cellHeight;
+        CGFloat fontSize = (minDimension * (3.0f/4.0f)); // This appears to be the magic ratio that creates text the right size
+		NSFont *font = [NSFont fontWithName:@"Helvetica-Bold" size:fontSize]; 
 		NSDictionary *attrs = [NSDictionary dictionaryWithObjectsAndKeys:
 			font, NSFontAttributeName,
 			color, NSForegroundColorAttributeName, nil];
@@ -174,10 +176,11 @@
 }
 
 - (void)drawMineInRect: (NSRect) rect {
+    NSLog(@"cellWidth: %f cellHeight: %f", cellWidth, cellHeight);
 	NSRect inset = NSInsetRect(rect, cellWidth/4, cellHeight/4);
 	NSBezierPath *mine = [NSBezierPath bezierPathWithOvalInRect:inset];
-	NSBezierPath *hLine = [NSBezierPath bezierPathWithRect:NSInsetRect(rect, 2, 7.5f)];
-	NSBezierPath *vLine = [NSBezierPath bezierPathWithRect:NSInsetRect(rect, 7.5f, 2)];
+	NSBezierPath *hLine = [NSBezierPath bezierPathWithRect:NSInsetRect(rect, cellWidth/8, (cellHeight/32)*15)];
+	NSBezierPath *vLine = [NSBezierPath bezierPathWithRect:NSInsetRect(rect, (cellWidth/32)*15, cellHeight/8)];
     
 	inset.size.height = cellHeight/8;
 	inset.size.width = cellWidth/8;
