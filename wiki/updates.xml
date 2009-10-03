@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>MacSweeper</title>
+    <subtitle>A Minesweeper clone for OS X</subtitle>
+    <link href="http://macsweeper.googlecode.com/svn/wiki/updates.xml" rel="self" />
+    <link href="http://macsweeper.googlecode.com/" />
+    <id>urn:uuid:386244c0-b075-11de-8a39-0800200c9a66</id>
+    <updated>2009-10-03T16:47:54-0700</updated>
+
+    <author>
+        <name>Morgan Conbere</name>
+        <email>mconbere@gmail.com</email>
+    </author>
+
+    <entry>
+        <title>0.4.0</title>
+        <content href="http://macsweeper.googlecode.com/files/MacSweeper-0.4.0.dmg" content-type="application/x-apple-diskimage" />
+        <link href="http://macsweeper.googlecode.com/" />        
+        <summary>Version 0.4.0</summary>
+        <updated>2009-09-21T00:00:00-0700</updated>
+        <id>urn:uuid:5c5dedf0-b077-11de-8a39-0800200c9a66</id>
+    </entry>
+</feed>
