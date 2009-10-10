@@ -6,4 +6,4 @@ I am working on a Project called Squeegee that will provide automatic installati
 
 As a developer, all you have to do is publish an Atom feed. It's simple and easy. The user software will do the rest.
 
-<a href="squ://macsweeper.googlecode.com/svn/wiki/updates.xml" title="Install">Install !MacSweeper using Squeegee</a>
+<a href="http://macsweeper.googlecode.com/trunk/squ/updates.html" title="Install">Install !MacSweeper using Squeegee</a>
