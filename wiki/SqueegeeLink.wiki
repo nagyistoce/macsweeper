@@ -1,0 +1,9 @@
+#summary Provides a link to the Squeegee update feed
+
+= Introduction =
+
+I am working on a Project called Squeegee that will provide automatic installation and downloads of OS X software. It is a simple technology based off of parsing a standard Atom XML feed with some special syntax to indicate information about the software.
+
+As a developer, all you have to do is publish an Atom feed. It's simple and easy. The user software will do the rest.
+
+*[squ://macsweeper.googlecode.com/svn/wiki/updates.xml Install MacSweeper using Squeegee]*
