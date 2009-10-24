@@ -40,6 +40,11 @@ static NSImage *initImage(NSString *name)
 
 @implementation MineController
 
+@synthesize questions;
+@synthesize customRows;
+@synthesize customColumns;
+@synthesize customMines;
+
 - (void)awakeFromNib
 {
     NSString *name = @"MacSweeperMainWindow";
@@ -90,7 +95,7 @@ static NSImage *initImage(NSString *name)
     [expertMenuItem setState:menuState[kExpert]];
     [customMenuItem setState:menuState[kCustom]];
     
-    [toggleQuestionsMenuItem setState:questions];
+    [toggleQuestionsMenuItem setState:self.questions];
     
     GameSettings currentSettings;
     
@@ -106,9 +111,9 @@ static NSImage *initImage(NSString *name)
             currentSettings = kExpertGame;
             break;
         case kCustom:
-            currentSettings.rows = customRows;
-            currentSettings.columns = customColumns;
-            currentSettings.mines = customMines;
+            currentSettings.rows = self.customRows;
+            currentSettings.columns = self.customColumns;
+            currentSettings.mines = self.customMines;
             break;
         default:
             NSLog(@"Bad GameType %d, using beginner game.", currentGameType);
@@ -121,7 +126,7 @@ static NSImage *initImage(NSString *name)
     [mineView newGameWithMines:currentSettings.mines
                           rows:currentSettings.rows
                        columns:currentSettings.columns
-                     questions:questions];
+                     questions:self.questions];
 }
 
 - (IBAction)beginnerGame:(id)sender
@@ -176,17 +181,17 @@ static NSImage *initImage(NSString *name)
     NSFormCell *customColumnsCell = [customForm cellAtIndex:1];
     NSFormCell *customMinesCell = [customForm cellAtIndex:2];
     
-    customRows = [customRowsCell intValue];
-    customColumns = [customColumnsCell intValue];
-    customMines = [customMinesCell intValue];
+    self.customRows = [customRowsCell intValue];
+    self.customColumns = [customColumnsCell intValue];
+    self.customMines = [customMinesCell intValue];
     
     currentGameType = kCustom;
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:[NSNumber numberWithInt:kCustom] forKey:@"GameType"];
-    [defaults setObject:[NSNumber numberWithInt:customRows] forKey:@"CustomRows"];
-    [defaults setObject:[NSNumber numberWithInt:customColumns] forKey:@"CustomColumns"];
-    [defaults setObject:[NSNumber numberWithInt:customMines] forKey:@"CustomMines"];
+    [defaults setObject:[NSNumber numberWithInt:self.customRows] forKey:@"CustomRows"];
+    [defaults setObject:[NSNumber numberWithInt:self.customColumns] forKey:@"CustomColumns"];
+    [defaults setObject:[NSNumber numberWithInt:self.customMines] forKey:@"CustomMines"];
     
     [self newGame:nil];
 }
@@ -215,10 +220,10 @@ static NSImage *initImage(NSString *name)
 
 - (IBAction)toggleQuestions:(id)sender
 {
-    questions = !questions;
+    self.questions = !self.questions;
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setBool:questions forKey:@"Questions"];
+    [defaults setBool:self.questions forKey:@"Questions"];
 
     [self newGame:nil];
 }
@@ -266,20 +271,20 @@ static NSImage *initImage(NSString *name)
     }
     
     // Set default questions state
-    questions = [defaults boolForKey:@"Questions"];
+    self.questions = [defaults boolForKey:@"Questions"];
     
     // Set default custom game settings
-    customRows = [defaults integerForKey:@"CustomRows"];
-    customColumns = [defaults integerForKey:@"CustomColumns"];
-    customMines = [defaults integerForKey:@"CustomMines"];
+    self.customRows = [defaults integerForKey:@"CustomRows"];
+    self.customColumns = [defaults integerForKey:@"CustomColumns"];
+    self.customMines = [defaults integerForKey:@"CustomMines"];
     
     NSFormCell *customRowsCell = [customForm cellAtIndex:0];
     NSFormCell *customColumnsCell = [customForm cellAtIndex:1];
     NSFormCell *customMinesCell = [customForm cellAtIndex:2];
     
-    [customRowsCell setObjectValue:[NSNumber numberWithInt:customRows]];
-    [customColumnsCell setObjectValue:[NSNumber numberWithInt:customColumns]];
-    [customMinesCell setObjectValue:[NSNumber numberWithInt:customMines]];
+    [customRowsCell setObjectValue:[NSNumber numberWithInt:self.customRows]];
+    [customColumnsCell setObjectValue:[NSNumber numberWithInt:self.customColumns]];
+    [customMinesCell setObjectValue:[NSNumber numberWithInt:self.customMines]];
  
     // Set default high scores
     NSArray *highScoreNames = [defaults objectForKey:@"HighScoreNames"];
