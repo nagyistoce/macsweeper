@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -18,6 +17,7 @@
 		8E8955A60C370D4B009EAA11 /* MainStyle.css in Copy Apple Help Styles */ = {isa = PBXBuildFile; fileRef = 8E89559E0C370D4A009EAA11 /* MainStyle.css */; };
 		8E89560F0C37262C009EAA11 /* Control.html in Copy Apple Help Resources */ = {isa = PBXBuildFile; fileRef = 8E8955950C370D4A009EAA11 /* Control.html */; };
 		8E89568B0C372C5E009EAA11 /* TaskStyle.css in Copy Apple Help Styles */ = {isa = PBXBuildFile; fileRef = 8E89568A0C372C5E009EAA11 /* TaskStyle.css */; };
+		8EBF73DD1093B17300D607E7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EBF73DB1093B17300D607E7 /* MainMenu.xib */; };
 		8ECB83750BF2693800A0E08C /* MineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB83740BF2693800A0E08C /* MineController.m */; };
 		8ECB83780BF2695000A0E08C /* MineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB83770BF2695000A0E08C /* MineView.m */; };
 		8ECB837B0BF2696500A0E08C /* MineField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB837A0BF2696400A0E08C /* MineField.m */; };
@@ -75,7 +75,6 @@
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		29B97319FDCFA39411CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* MacSweeper_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacSweeper_Prefix.pch; sourceTree = "<group>"; };
@@ -88,6 +87,7 @@
 		8E89559C0C370D4A009EAA11 /* Report.html */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.html; path = Report.html; sourceTree = "<group>"; };
 		8E89559E0C370D4A009EAA11 /* MainStyle.css */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = MainStyle.css; sourceTree = "<group>"; };
 		8E89568A0C372C5E009EAA11 /* TaskStyle.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TaskStyle.css; sourceTree = "<group>"; };
+		8EBF73DC1093B17300D607E7 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		8ECB83730BF2693800A0E08C /* MineController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MineController.h; sourceTree = "<group>"; };
 		8ECB83740BF2693800A0E08C /* MineController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = MineController.m; sourceTree = "<group>"; };
 		8ECB83760BF2695000A0E08C /* MineView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MineView.h; sourceTree = "<group>"; };
@@ -180,7 +180,7 @@
 				8E8955940C370D4A009EAA11 /* MacSweeper Help */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
-				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
+				8EBF73DB1093B17300D607E7 /* MainMenu.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -310,9 +310,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				8E4839380C397DDB00BB6395 /* minesweeper.icns in Resources */,
+				8EBF73DD1093B17300D607E7 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,12 +343,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		29B97318FDCFA39411CA2CEA /* MainMenu.nib */ = {
+		8EBF73DB1093B17300D607E7 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				29B97319FDCFA39411CA2CEA /* English */,
+				8EBF73DC1093B17300D607E7 /* English */,
 			);
-			name = MainMenu.nib;
+			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
