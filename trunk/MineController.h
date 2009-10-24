@@ -69,8 +69,11 @@ static const GameSettings kExpertGame = {16, 30, 99};
     // Current game state
     GameType currentGameType;
     
-    bool questions;
-    int customRows, customColumns, customMines;
+    // Properties
+    BOOL questions;
+    int customRows;
+    int customColumns;
+    int customMines;
 
     // High Scores
     HighScore beginnerScores[3];
@@ -80,6 +83,11 @@ static const GameSettings kExpertGame = {16, 30, 99};
     HighScore *scoreList[3];
     NSForm *formList[3];
 }
+
+@property BOOL questions;
+@property int customRows;
+@property int customColumns;
+@property int customMines;
 
 - (IBAction)newGame:(id)sender;
 
