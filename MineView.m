@@ -115,15 +115,19 @@
     NSRect frame = [self frame];
     
     size_t oldHeight = frame.size.height;
-    frame.size.width = columns * cellWidth;
-    frame.size.height = rows * cellHeight;
+    NSRect newFrame = frame;
+    newFrame.size.width = columns * cellWidth;
+    newFrame.size.height = rows * cellHeight;
     
-    windowFrame.size = frame.size;
-    windowFrame.origin.y += oldHeight - frame.size.height;
-    
-    [window setFrame:[window frameRectForContentRect:windowFrame]
+    NSRect newWindowFrame = windowFrame;
+    newWindowFrame.size = newFrame.size;
+    newWindowFrame.origin.y += oldHeight - newFrame.size.height;
+
+    [window setFrame:[window frameRectForContentRect:newWindowFrame]
              display:YES
              animate:NO];
+    
+    //NSLog(@"reshaped window from (%f,%f,%f,%f) to (%f,%f,%f,%f)", windowFrame.origin.x, windowFrame.origin.y, windowFrame.size.width, windowFrame.size.height, newWindowFrame.origin.x, newWindowFrame.origin.y, newWindowFrame.size.width, newWindowFrame.size.height);
 }
 
 - (void)newGameWithMines:(int)m rows:(int)r columns:(int)c questions:(BOOL)b {

@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "MineView.h"
+#import "SmileyImageView.h"
 
 typedef enum {
     kBeginner = 0,
@@ -31,7 +32,7 @@ static const GameSettings kBeginnerGame = {9, 9, 10};
 static const GameSettings kIntermediateGame = {16, 16, 40};
 static const GameSettings kExpertGame = {16, 30, 99};
 
-@interface MineController : NSWindowController <MineFieldDelegate> {
+@interface MineController : NSWindowController <MineFieldDelegate, SmileyImageViewDelegate> {
 @private
     // Main minesweeper view
     IBOutlet MineView *mineView;
@@ -64,7 +65,7 @@ static const GameSettings kExpertGame = {16, 30, 99};
     // Toolbar item views
     NSTextField *timerField;
     NSTextField *minesLeftField;
-    NSImageView *smileyView;
+    SmileyImageView *smileyView;
 
     // Current game state
     GameType currentGameType;
@@ -119,5 +120,8 @@ static const GameSettings kExpertGame = {16, 30, 99};
 - (NSToolbarItem *)toolbar:(NSToolbar *)toolbar itemForItemIdentifier:(NSString *)itemIdentifier willBeInsertedIntoToolbar:(BOOL)flag;
 - (NSArray *)toolbarAllowedItemIdentifiers:(NSToolbar *)toolbar;
 - (NSArray *)toolbarDefaultItemIdentifiers:(NSToolbar *)toolbar;
+
+- (void)SmileyImageViewMouseDown;
+- (void)SmileyImageViewMouseUp;
 
 @end

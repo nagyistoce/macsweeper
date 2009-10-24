@@ -431,12 +431,13 @@ static NSImage *initImage(NSString *name)
     } else if ([itemIdentifier isEqualToString:@"SmileyItem"]) {
         int smileySize = 18;
         if (!smileyView) {
-            smileyView = [[NSImageView alloc] initWithFrame:NSMakeRect(0, 0, smileySize, smileySize)];
+            smileyView = [[SmileyImageView alloc] initWithFrame:NSMakeRect(0, 0, smileySize, smileySize)];
+            smileyView.delegate = self;
             [smileyView setImage:[NSImage imageNamed:@"smile"]];
             [smileyView setTarget:self];
         }
         
-        [item setView: smileyView];
+        [item setView:smileyView];
         
         [item setMinSize:NSMakeSize(smileySize, smileySize)];
         [item setMaxSize:NSMakeSize(smileySize, smileySize)];
@@ -547,6 +548,17 @@ static NSImage *initImage(NSString *name)
 - (void)mouseUpAction
 {
     [smileyView setImage:[NSImage imageNamed:@"smile"]];
+}
+
+- (void)SmileyImageViewMouseDown
+{
+    [self mouseDownAction];
+}
+
+- (void)SmileyImageViewMouseUp
+{
+    [self mouseUpAction];
+    [self newGame:self];
 }
 
 @end

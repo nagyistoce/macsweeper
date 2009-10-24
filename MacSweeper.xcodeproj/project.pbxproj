@@ -18,6 +18,7 @@
 		8E89560F0C37262C009EAA11 /* Control.html in Copy Apple Help Resources */ = {isa = PBXBuildFile; fileRef = 8E8955950C370D4A009EAA11 /* Control.html */; };
 		8E89568B0C372C5E009EAA11 /* TaskStyle.css in Copy Apple Help Styles */ = {isa = PBXBuildFile; fileRef = 8E89568A0C372C5E009EAA11 /* TaskStyle.css */; };
 		8EBF73DD1093B17300D607E7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EBF73DB1093B17300D607E7 /* MainMenu.xib */; };
+		8EBF74521093BCF300D607E7 /* SmileyImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF74511093BCF300D607E7 /* SmileyImageView.m */; };
 		8ECB83750BF2693800A0E08C /* MineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB83740BF2693800A0E08C /* MineController.m */; };
 		8ECB83780BF2695000A0E08C /* MineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB83770BF2695000A0E08C /* MineView.m */; };
 		8ECB837B0BF2696500A0E08C /* MineField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB837A0BF2696400A0E08C /* MineField.m */; };
@@ -88,6 +89,8 @@
 		8E89559E0C370D4A009EAA11 /* MainStyle.css */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = MainStyle.css; sourceTree = "<group>"; };
 		8E89568A0C372C5E009EAA11 /* TaskStyle.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TaskStyle.css; sourceTree = "<group>"; };
 		8EBF73DC1093B17300D607E7 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		8EBF74501093BCF300D607E7 /* SmileyImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmileyImageView.h; sourceTree = "<group>"; };
+		8EBF74511093BCF300D607E7 /* SmileyImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmileyImageView.m; sourceTree = "<group>"; };
 		8ECB83730BF2693800A0E08C /* MineController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MineController.h; sourceTree = "<group>"; };
 		8ECB83740BF2693800A0E08C /* MineController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = MineController.m; sourceTree = "<group>"; };
 		8ECB83760BF2695000A0E08C /* MineView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MineView.h; sourceTree = "<group>"; };
@@ -118,6 +121,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8EBF744F1093BC7A00D607E7 /* SmileyImageView */,
 				8ECB836F0BF268D000A0E08C /* MineController */,
 				8ECB83700BF268DB00A0E08C /* MineView */,
 				8ECB83710BF268ED00A0E08C /* MineField */,
@@ -226,6 +230,15 @@
 			path = style;
 			sourceTree = "<group>";
 		};
+		8EBF744F1093BC7A00D607E7 /* SmileyImageView */ = {
+			isa = PBXGroup;
+			children = (
+				8EBF74501093BCF300D607E7 /* SmileyImageView.h */,
+				8EBF74511093BCF300D607E7 /* SmileyImageView.m */,
+			);
+			name = SmileyImageView;
+			sourceTree = "<group>";
+		};
 		8ECB836F0BF268D000A0E08C /* MineController */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,6 +342,7 @@
 				8ECB837B0BF2696500A0E08C /* MineField.m in Sources */,
 				8ECB837E0BF2697400A0E08C /* Cell.m in Sources */,
 				8ECB84540BF2C83700A0E08C /* MineView+Drawing.m in Sources */,
+				8EBF74521093BCF300D607E7 /* SmileyImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
