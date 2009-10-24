@@ -217,6 +217,9 @@ static NSImage *initImage(NSString *name)
 {
     questions = !questions;
     
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setBool:questions forKey:@"Questions"];
+
     [self newGame:nil];
 }
 
@@ -228,7 +231,7 @@ static NSImage *initImage(NSString *name)
     if (![defaults objectForKey:@"GameType"])
         [defaults setObject:[NSNumber numberWithInt:kBeginner] forKey:@"GameType"];
     if (![defaults objectForKey:@"Questions"])
-        [defaults setObject:@"YES" forKey:@"Questions"];
+        [defaults setBool:YES forKey:@"Questions"];
     if (![defaults objectForKey:@"CustomRows"])
         [defaults setObject:[NSNumber numberWithInt:16] forKey:@"CustomRows"];
     if (![defaults objectForKey:@"CustomColumns"])
