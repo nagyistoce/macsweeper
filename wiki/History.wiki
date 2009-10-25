@@ -9,6 +9,7 @@
 
 The original project was hosted at http://www.cs.hmc.edu/~mconbere/macsweeper/. The first version was released in June 2007, and it was updated with additional features and refinements over time.
 
+|| Version 0.4.2 || (October 25, 2009) || Clicking the smiley face now starts a new game. ||
 || Version 0.4.1 || (October 24, 2009) || Improved resolution independence support and fixed a bug with the handling of the use question mark preference. ||
 || Version 0.4.0 || (September 21, 2009) || Extensive code clean up and slight interface tweaks. ||
 || Version 0.3.2 || (September 3, 2009) || Snow Leopard compatibility. ||
