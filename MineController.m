@@ -17,22 +17,22 @@ static NSImage *initImage(NSString *name)
 	
 	NSBundle *iChatBundle = [[NSBundle alloc] initWithPath:[[NSWorkspace sharedWorkspace] absolutePathForAppBundleWithIdentifier:@"com.apple.iChat"]];
 	NSBundle *iChatSmileyBundle = [[NSBundle alloc] initWithPath:[NSString stringWithFormat:@"%@/%@", [iChatBundle builtInPlugInsPath], @"Standard.smileypack"]];
-	
+
 	NSString *imagePath = [iChatSmileyBundle pathForResource:[NSString stringWithFormat:@"%@.tif", name] ofType:nil];
-	
+
 	// Attempt to load the Leopard image location
 	if (imagePath == nil) {
-		imagePath = [iChatBundle pathForResource:@"%@.tif" ofType:nil];
+		imagePath = [iChatBundle pathForResource:[NSString stringWithFormat:@"%@.tif", name] ofType:nil];
 	}
-	
+
 	// Attempt to load the Tiger image location
 	if (imagePath == nil) {
-		imagePath = [iChatBundle pathForResource:@"%@.tiff" ofType:nil];
+		imagePath = [iChatBundle pathForResource:[NSString stringWithFormat:@"%@.tiff", name] ofType:nil];
 	}
-	
+
 	[iChatSmileyBundle release];
 	[iChatBundle release];
-	
+
 	NSImage *image = [[NSImage alloc] initWithContentsOfFile:imagePath];
     [image setName:name];
 	return image;
