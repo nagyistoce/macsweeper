@@ -176,7 +176,6 @@
 }
 
 - (void)drawMineInRect: (NSRect) rect {
-    NSLog(@"cellWidth: %f cellHeight: %f", cellWidth, cellHeight);
 	NSRect inset = NSInsetRect(rect, cellWidth/4, cellHeight/4);
 	NSBezierPath *mine = [NSBezierPath bezierPathWithOvalInRect:inset];
 	NSBezierPath *hLine = [NSBezierPath bezierPathWithRect:NSInsetRect(rect, cellWidth/8, (cellHeight/32)*15)];
