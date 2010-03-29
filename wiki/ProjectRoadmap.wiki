@@ -21,5 +21,3 @@
   * 3D user interface, reinventing the Minesweeper paradigm for the new millennium.
   * Implement visionary enterprise gameplan.
   * Result driven monetization.
-
-[http://macsweeper.googlecode.com/svn/wiki/updates.rss]
